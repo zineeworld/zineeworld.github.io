@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://code.mymusictaste.com/mmt-donut-chart/demo.html -->
+<html lang="en" class="gr__code_mymusictaste_com"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="http://code.mymusictaste.com/mmt-donut-chart/favi.png">
+	<title>mmt-donut-chart.js</title>
+
+	<!-- just for demo -->
+	<link href="./mmt-donut-chart.js_files/shCore.css" rel="stylesheet" tyle="text/css">
+	<link href="./mmt-donut-chart.js_files/shThemeDefault.css" rel="stylesheet" tyle="text/css">
+	<link href="./mmt-donut-chart.js_files/css(1)" rel="stylesheet" type="text/css">
+	<style>
+		/* just for demo */
+		#forkongithub {position:fixed;display:block;top:0;right:0;width:200px;overflow:hidden;height:200px;z-index:9999;}
+		#forkongithub a {box-sizing:content-box;background:#444;color:#fff;text-decoration:none;text-align:center;font-weight:bold;padding:5px 40px;font-size:1rem;line-height:2rem;position:relative;transition:0.5s;width:200px;position:absolute;top:60px;right:-60px;transform:rotate(45deg);-webkit-transform:rotate(45deg);-ms-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);box-shadow:4px 4px 10px rgba(0,0,0,0.8);}
+		#forkongithub a:hover{background:#0bbaba;color:#fff;}
+		#forkongithub a::before,#forkongithub a::after{content:"";width:100%;display:block;position:absolute;top:1px;left:0;height:1px;background:#fff;}
+		#forkongithub a::after{bottom:1px;top:auto;}
+
+		body { margin:0; background:#eee }
+		body * { box-sizing:border-box; margin:0; padding:0; font-family:'Roboto Condensed'; color:#222; outline:0; }
+		.wrap { padding:30px 0 100px; margin:0 auto; width:900px; }
+		h1, h2, h3 { text-align:left; }
+		h1 { padding:50px 0 0; text-align:center; font-size:50px; text-transform:uppercase; text-shadow:#fff 0px 1px 0, #000 0 -1px 0; }
+		h2 { padding-top:70px;  font-size:35px; color:#0bbaba; }
+		h3 { padding-top:70px; font-size:25px; }
+		h3:first-of-type { padding-top:20px; }
+		.version { margin:10px 0 -40px; text-align:right; }
+		.cp_embed_iframe { margin-top:20px; }
+		.sample { padding:10px 0; margin:20px 0; background:#fff; }
+		.sample div { margin:0 15px; display:inline-block; }
+		.syntaxhighlighter {  }
+		.code > div { margin:20px 0; background:#fff; overflow:auto; }
+
+		/* for label chart */
+		.chart-label {
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			width: 200px;
+			height: 200px;
+			border-radius: 100%;
+			font-size: 20px;
+			color: #fff;
+			text-align: center;
+			cursor: pointer;
+			z-index: 1;
+		}
+		.chart-num {
+			display: inline-block;
+			line-height: 200px;
+			font-size: 80px;
+			font-weight: 700;
+		}
+		.chart-percent {
+			display: inline-block;
+			line-height: 200px;
+			font-size: 20px;
+			font-weight: 400;
+		}
+	</style>
+</head>
+
+<body data-gr-c-s-loaded="true">
+	<span id="forkongithub"><a href="https://github.com/zineeworld/mmt-donut-chart" target="_blank">Fork me on GitHub</a></span>
+	<div class="wrap">
+		<h1>mmt-donut-chart.js</h1>
+		<p class="version">v.1.1.2</p>
+		
+		<h2>Example</h2>
+		<h3>· Chart</h3>
+		<div class="sample">
+			<div style="position: relative;"><canvas id="chart1" height="230" width="230"></canvas><canvas width="220" height="220" style="visibility: hidden; position: absolute; top: 5px; left: 5px; width: 220px; height: 220px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart2" height="200" width="200"></canvas><canvas width="180" height="180" style="visibility: hidden; position: absolute; top: 10px; left: 10px; width: 180px; height: 180px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart3" height="150" width="150"></canvas><canvas width="126" height="126" style="visibility: hidden; position: absolute; top: 12px; left: 12px; width: 126px; height: 126px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart4" height="100" width="100"></canvas><canvas width="80" height="80" style="visibility: hidden; position: absolute; top: 10px; left: 10px; width: 80px; height: 80px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart5" height="50" width="50"></canvas><canvas width="40" height="40" style="visibility: hidden; position: absolute; top: 5px; left: 5px; width: 40px; height: 40px;"></canvas></div>
+		</div>
+		<div class="code">
+			<div><div id="highlighter_35986" class="syntaxhighlighter  html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code><code class="html plain">&gt;&lt;</code><code class="html keyword">canvas</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"chart"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">canvas</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"lib/Chart.min.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"mmt-donut-chart.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="html plain">&lt;/</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+			<div><div id="highlighter_845585" class="syntaxhighlighter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">var</code> <code class="js plain">options = { </code><code class="js comments">// these are default values</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">animationStep: 100,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">chartColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number4 index3 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">cutOut: 98,</code></div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">bgColor: </code><code class="js string">'#444444'</code><code class="js plain">,</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">doughnutPadding: 5,</code></div><div class="line number7 index6 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">dotColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">outerCanvasSize: 230,</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">pointSize: 5</code></div><div class="line number10 index9 alt1"><code class="js plain">}</code></div><div class="line number11 index10 alt2">&nbsp;</div><div class="line number12 index11 alt1"><code class="js plain">mmtDonutChart(</code><code class="js string">'chart'</code><code class="js plain">, 75, options);&nbsp;&nbsp;&nbsp; </code><code class="js comments">// put ID, percent, options</code></div></div></td></tr></tbody></table></div></div>
+		</div>
+		
+		<h3>· Chart (gradient fill) - added v.1.1.0 </h3>
+		<div class="sample">
+			<div style="position: relative;"><canvas id="chart7" height="230" width="230"></canvas><canvas width="220" height="220" style="visibility: hidden; position: absolute; top: 5px; left: 5px; width: 220px; height: 220px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart8" height="200" width="200"></canvas><canvas width="180" height="180" style="visibility: hidden; position: absolute; top: 10px; left: 10px; width: 180px; height: 180px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart9" height="150" width="150"></canvas><canvas width="126" height="126" style="visibility: hidden; position: absolute; top: 12px; left: 12px; width: 126px; height: 126px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart10" height="100" width="100"></canvas><canvas width="80" height="80" style="visibility: hidden; position: absolute; top: 10px; left: 10px; width: 80px; height: 80px;"></canvas></div>
+			<div style="position: relative;"><canvas id="chart11" height="50" width="50"></canvas><canvas width="40" height="40" style="visibility: hidden; position: absolute; top: 5px; left: 5px; width: 40px; height: 40px;"></canvas></div>
+		</div>
+		<div class="code">
+			<div><div id="highlighter_95980" class="syntaxhighlighter  html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code><code class="html plain">&gt;&lt;</code><code class="html keyword">canvas</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"chart"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">canvas</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"lib/Chart.min.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"mmt-donut-chart.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="html plain">&lt;/</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+			<div><div id="highlighter_318886" class="syntaxhighlighter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">var</code> <code class="js plain">options = {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">startColor: </code><code class="js string">'#f8ca4d'</code><code class="js plain">,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">endColor: </code><code class="js string">'#0bbaba'</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="js plain">mmtDonutChart(</code><code class="js string">'chart'</code><code class="js plain">, 75, options);&nbsp;&nbsp;&nbsp; </code><code class="js comments">// put ID, percent, options</code></div></div></td></tr></tbody></table></div></div>
+		</div>
+
+
+		<h3>· Chart + Label</h3>
+		<div class="sample">
+			<div style="position: relative;">
+				<canvas id="chart6" height="230" width="230"></canvas>
+				<span class="chart-label">
+					<span id="chart6-num" class="chart-num">100</span><span class="chart-percent">%</span>
+				</span>
+			<canvas width="220" height="220" style="visibility: hidden; position: absolute; top: 5px; left: 5px; width: 220px; height: 220px;"></canvas></div>
+		</div>
+		<div class="code">
+			<div><div id="highlighter_442024" class="syntaxhighlighter  html"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="html plain">&lt;</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div><div class="line number2 index1 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number3 index2 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number4 index3 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html comments">&lt;!-- Please follow the naming rules [chart ID : XX / label ID : XX-num] --&gt;</code></div><div class="line number5 index4 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">canvas</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"chart"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">canvas</code><code class="html plain">&gt;</code></div><div class="line number6 index5 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">span</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"chart-label"</code><code class="html plain">&gt;</code></div><div class="line number7 index6 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">span</code> <code class="html color1">id</code><code class="html plain">=</code><code class="html string">"chart-num"</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"chart-num"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">span</code><code class="html plain">&gt;&lt;</code><code class="html keyword">span</code> <code class="html color1">class</code><code class="html plain">=</code><code class="html string">"chart-percent"</code><code class="html plain">&gt;%&lt;/</code><code class="html keyword">span</code><code class="html plain">&gt;</code></div><div class="line number8 index7 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">span</code><code class="html plain">&gt;</code></div><div class="line number9 index8 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">div</code><code class="html plain">&gt;</code></div><div class="line number10 index9 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code>&nbsp;</div><div class="line number11 index10 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"lib/Chart.min.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number12 index11 alt1"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;</code><code class="html keyword">script</code> <code class="html color1">src</code><code class="html plain">=</code><code class="html string">"mmt-donut-chart.js"</code><code class="html plain">&gt;&lt;/</code><code class="html keyword">script</code><code class="html plain">&gt;</code></div><div class="line number13 index12 alt2"><code class="html spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="html plain">&lt;/</code><code class="html keyword">body</code><code class="html plain">&gt;</code></div><div class="line number14 index13 alt1"><code class="html plain">&lt;/</code><code class="html keyword">html</code><code class="html plain">&gt;</code></div></div></td></tr></tbody></table></div></div>
+			<div><div id="highlighter_934146" class="syntaxhighlighter  css"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="css comments">/* You should change css according to chart size. */</code></div><div class="line number2 index1 alt1">&nbsp;</div><div class="line number3 index2 alt2"><code class="css plain">.chart-label {</code></div><div class="line number4 index3 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">position</code><code class="css plain">: </code><code class="css value">absolute</code><code class="css plain">;</code></div><div class="line number5 index4 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">top</code><code class="css plain">: </code><code class="css value">15px</code><code class="css plain">;</code></div><div class="line number6 index5 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">left</code><code class="css plain">: </code><code class="css value">15px</code><code class="css plain">;</code></div><div class="line number7 index6 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">width</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number8 index7 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number9 index8 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css plain">border-radius: </code><code class="css value">100%</code><code class="css plain">;</code></div><div class="line number10 index9 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-size</code><code class="css plain">: </code><code class="css value">20px</code><code class="css plain">;</code></div><div class="line number11 index10 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">color</code><code class="css plain">: </code><code class="css value">#fff</code><code class="css plain">;</code></div><div class="line number12 index11 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">text-align</code><code class="css plain">: </code><code class="css value">center</code><code class="css plain">;</code></div><div class="line number13 index12 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">cursor</code><code class="css plain">: </code><code class="css value">pointer</code><code class="css plain">;</code></div><div class="line number14 index13 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">z-index</code><code class="css plain">: </code><code class="css value">1</code><code class="css plain">;</code></div><div class="line number15 index14 alt2"><code class="css plain">}</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="css plain">.chart-num {</code></div><div class="line number18 index17 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: inline-</code><code class="css value">block</code><code class="css plain">;</code></div><div class="line number19 index18 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">line-height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number20 index19 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-size</code><code class="css plain">: </code><code class="css value">80px</code><code class="css plain">;</code></div><div class="line number21 index20 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-weight</code><code class="css plain">: </code><code class="css value">700</code><code class="css plain">;</code></div><div class="line number22 index21 alt1"><code class="css plain">}</code></div><div class="line number23 index22 alt2">&nbsp;</div><div class="line number24 index23 alt1"><code class="css plain">.chart-percent {</code></div><div class="line number25 index24 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">display</code><code class="css plain">: inline-</code><code class="css value">block</code><code class="css plain">;</code></div><div class="line number26 index25 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">line-height</code><code class="css plain">: </code><code class="css value">200px</code><code class="css plain">;</code></div><div class="line number27 index26 alt2"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-size</code><code class="css plain">: </code><code class="css value">20px</code><code class="css plain">;</code></div><div class="line number28 index27 alt1"><code class="css spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="css keyword">font-weight</code><code class="css plain">: </code><code class="css value">400</code><code class="css plain">;</code></div><div class="line number29 index28 alt2"><code class="css plain">}</code></div></div></td></tr></tbody></table></div></div>
+			<div><div id="highlighter_90200" class="syntaxhighlighter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js keyword">var</code> <code class="js plain">options = {</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelShow : </code><code class="js keyword">true</code><code class="js plain">,</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelAnimation : </code><code class="js keyword">true</code></div><div class="line number4 index3 alt1"><code class="js plain">}</code></div><div class="line number5 index4 alt2">&nbsp;</div><div class="line number6 index5 alt1"><code class="js plain">mmtDonutChart(</code><code class="js string">'chart'</code><code class="js plain">, 100, options);&nbsp; </code><code class="js comments">// put chart ID, percent, options</code></div></div></td></tr></tbody></table></div></div>
+		</div>
+
+		<!-- <h3>· Chart + Label + Background</h3> -->
+		<h2>Options</h2>
+		<div><div id="highlighter_558011" class="syntaxhighlighter  js"><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="js plain">{</code></div><div class="line number2 index1 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Boolean - Animation of chart</code></div><div class="line number3 index2 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">animateRotation: </code><code class="js keyword">true</code><code class="js plain">,</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Number - Amount of animation steps</code></div><div class="line number6 index5 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">animationStep: 100,</code></div><div class="line number7 index6 alt2">&nbsp;</div><div class="line number8 index7 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// String - Animation part color of chart</code></div><div class="line number9 index8 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">chartColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number10 index9 alt1">&nbsp;</div><div class="line number11 index10 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// String - Gradient fill (start color), default is same to chartColor</code></div><div class="line number12 index11 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">startColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// String - Gradient fill (end color), default is same to chartColor</code></div><div class="line number15 index14 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">endColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number16 index15 alt1">&nbsp;</div><div class="line number17 index16 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Number - The percentage of the chart that we cut out of the middle</code></div><div class="line number18 index17 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">cutOut: 98,</code></div><div class="line number19 index18 alt2">&nbsp;</div><div class="line number20 index19 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// String - Whole donut chart background color</code></div><div class="line number21 index20 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">bgColor: </code><code class="js string">'#444444'</code><code class="js plain">,</code></div><div class="line number22 index21 alt1">&nbsp;</div><div class="line number23 index22 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Number - Padding(px) inside outer canvas </code></div><div class="line number24 index23 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">doughnutPadding: 5,</code></div><div class="line number25 index24 alt2">&nbsp;</div><div class="line number26 index25 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// String - Donut chart dot color, default is same to chartColor</code></div><div class="line number27 index26 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">dotColor: </code><code class="js string">'#0bbaba'</code><code class="js plain">,</code></div><div class="line number28 index27 alt1">&nbsp;</div><div class="line number29 index28 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Number - Chart outer canvas size(px)</code></div><div class="line number30 index29 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">outerCanvasSize: 230,</code></div><div class="line number31 index30 alt2">&nbsp;</div><div class="line number32 index31 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Number - Size(px) of dot</code></div><div class="line number33 index32 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">pointSize: 5,</code></div><div class="line number34 index33 alt1">&nbsp;</div><div class="line number35 index34 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Boolean - Show chart label</code></div><div class="line number36 index35 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelShow : </code><code class="js keyword">false</code><code class="js plain">,</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Boolean - Apply chart label count animation</code></div><div class="line number39 index38 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">labelAnimation: </code><code class="js keyword">false</code><code class="js plain">,</code></div><div class="line number40 index39 alt1">&nbsp;</div><div class="line number41 index40 alt2"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js comments">// Boolean - Use default chart.js</code></div><div class="line number42 index41 alt1"><code class="js spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="js plain">defaultChart: </code><code class="js keyword">false</code></div><div class="line number43 index42 alt2"><code class="js plain">}</code></div></div></td></tr></tbody></table></div></div>
+	</div>
+	
+	<!-- just for demo -->
+	<script src="./mmt-donut-chart.js_files/shCore.js"></script>
+	<script src="./mmt-donut-chart.js_files/shBrushCss.js"></script>
+	<script src="./mmt-donut-chart.js_files/shBrushXml.js"></script>
+	<script src="./mmt-donut-chart.js_files/shBrushJScript.js"></script>
+
+	<!-- should be need to -->
+	<script src="./mmt-donut-chart.js_files/Chart.min.js"></script>
+	<script src="./mmt-donut-chart.js_files/mmt-donut-chart.js"></script>
+	<script>
+		SyntaxHighlighter.defaults['toolbar'] = false;
+		SyntaxHighlighter.all();
+
+		var options2 = {
+			cutOut: 90,
+			doughnutPadding: 10,
+			outerCanvasSize: 200,
+			pointSize: 10
+		};
+
+		var options3 = {
+			cutOut: 80,
+			doughnutPadding: 12,
+			outerCanvasSize: 150,
+			pointSize: 12
+		};
+
+		var options4 = {
+			cutOut: 70,
+			doughnutPadding: 10,
+			outerCanvasSize: 100,
+			pointSize: 10
+		};
+
+		var options5 = {
+			cutOut: 60,
+			doughnutPadding: 0,
+			outerCanvasSize: 50,
+			pointSize: 0
+		};
+
+		var options6 = {
+			labelShow: true,
+			labelAnimation: true
+		}
+
+		var options7 = {
+			startColor: '#f8ca4d',
+			endColor: '#0bbaba'
+		};
+
+		var options8 = {
+			cutOut: 95,
+			doughnutPadding: 10,
+			outerCanvasSize: 200,
+			pointSize: 7,
+			startColor: '#ff0000',
+			endColor: '#ffff00',
+			dotColor: '#ffff00'
+		};
+
+		var options9 = {
+			cutOut: 90,
+			doughnutPadding: 12,
+			outerCanvasSize: 150,
+			pointSize: 7,
+			startColor: '#0f4ea5',
+			endColor: '#1a5e65',
+			dotColor: '#1a5e65'
+		};
+
+		var options10 = {
+			cutOut: 90,
+			doughnutPadding: 10,
+			outerCanvasSize: 100,
+			pointSize: 6,
+			startColor: '#8b8378',
+			endColor: '#3d56f5',
+			dotColor: '#3d56f5'
+		};
+
+		var options11 = {
+			cutOut: 80,
+			doughnutPadding: 0,
+			outerCanvasSize: 50,
+			pointSize: 0,
+			startColor: '#156785',
+			endColor: '#495612'
+		};
+
+		mmtDonutChart('chart1', 75);	// default style
+		mmtDonutChart('chart2', 75, options2);
+		mmtDonutChart('chart3', 75, options3);
+		mmtDonutChart('chart4', 75, options4);
+		mmtDonutChart('chart5', 75, options5);
+
+		mmtDonutChart('chart6', 100, options6);
+
+		mmtDonutChart('chart7', 75, options7);
+		mmtDonutChart('chart8', 75, options8);
+		mmtDonutChart('chart9', 75, options9);
+		mmtDonutChart('chart10', 75, options10);
+		mmtDonutChart('chart11', 75, options11);
+	</script>
+
+</body></html>
