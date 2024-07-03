@@ -1,0 +1,41 @@
+.ui-box {
+  display: flex;
+
+  &.-row {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--box-gap);
+
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+      & > * + * {
+        margin-left: var(--box-gap);
+      }
+    }
+
+    &.-between {
+      justify-content: space-between;
+    }
+    &.-center {
+      justify-content: center;
+    }
+
+  }
+
+  &.-column {
+    flex-direction: column;
+    gap: var(--box-gap);
+
+    @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+      & > * + * {
+        margin-top: var(--box-gap);
+      }
+    }
+
+    &.-center {
+      align-items: center;
+    }
+    &.-start {
+      align-items: start;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.ui-page-header {
+  padding: 16px var(--spacing-x) 32px;
+
+  .ui-page-header-title {
+    @include font-heading(4);
+    color: var(--text2);
+
+    &:has(b, strong) {
+      font-weight: 500;
+
+      b, strong {
+        font-weight: 700;
+      }
+    }
+
+    span, b, strong, i, em {
+      font-size: inherit;
+    }
+
+    i {
+      display: block;
+      font-style: normal;
+      font-weight: 300;
+    }
+  }
+
+  * + .ui-page-header-title {
+    margin-top: 12px;
+  }
+
+  .ui-page-header-desc {
+    margin-top: 12px;
+    @include font-body(1);
+    color: var(--text5);
+  }
+
+  * + .ui-label-group {
+    margin-top: 12px;
+  }
+
+  .ui-tabs-area {
+    margin-top: 24px;
+    margin-left: calc(-1 * var(--spacing-x));
+    margin-right: calc(-1 * var(--spacing-x));
+  }
+}

@@ -1,0 +1,113 @@
+.ui-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+  &.-default {
+    padding: 0 6px;
+    min-width: 20px;
+    height: 22px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    &.-primary {
+      background-color: var(--primary08);
+      color: var(--primary);
+    }
+    &.-secondary {
+      background-color: var(--secondary08);
+      color: var(--secondary);
+    }
+    &.-tertiary {
+      background-color: var(--bg100);
+      color: var(--text9);
+    }
+    &.-success {
+      background-color: var(--success08);
+      color: var(--success);
+    }
+    &.-danger {
+      background-color: var(--error08);
+      color: var(--error);
+    }
+  }
+
+  &.-squircle {
+    text {
+      font-size: 12px;
+      font-weight: 700;
+      &.-large {
+        font-size: 14px;
+      }
+    }
+    &.-primary {
+      path { fill: var(--primary08); }
+      text { fill: var(--primary); }
+    }
+    &.-secondary {
+      path { fill: var(--success08); }
+      text { fill: var(--success); }
+    }
+    &.-tertiary {
+      path { fill: var(--bg200); }
+      text { fill: var(--text5); }
+    }
+    &.-danger {
+      path { fill: var(--error08); }
+      text { fill: var(--error); }
+    }
+  }
+
+  &.-dot {
+    position: absolute;
+    top: 0;
+    right: -10px;
+    display: block;
+    padding: 2px;
+    width: 10px;
+    height: 10px;
+    font-size: 0;
+    .ui-badge-dot {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 100%;
+      background-color: var(--error);
+    }
+    &.-outer {
+      right: 0;
+    }
+    &.-small {
+      transform: scale(0.8);
+      transform-origin: top right;
+    }
+  }
+
+  &.-new {
+    &.-small {
+      padding: 2px;
+      width: 12px;
+      height: 12px;
+    }
+    &.-medium {
+      padding: 2.5px;
+      width: 15px;
+      height: 15px;
+    }
+    .ui-badge-new {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &.-icon {
+    width: 16px;
+    height: 16px;
+    font-size: 0;
+    .ui-icon {
+      width: 100%;
+      height: 100%;
+    }
+  }
+} 

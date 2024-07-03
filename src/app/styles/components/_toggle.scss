@@ -1,0 +1,83 @@
+/* ========================================================= */
+/* toggle variables                                          */
+/* ========================================================= */
+
+:root {
+  --toggle-medium-width: 40px;
+  --toggle-medium-height: 22px;
+  --toggle-small-width: 32px;
+  --toggle-small-height: 18px;
+
+  --toggle-dot-color: white;
+  --toggle-bg-color: var(--bg300);
+  --toggle-bg-color-checked: var(--success);
+}
+
+.ui-toggle-area {
+  --toggle-width: var(--toggle-medium-width);
+  --toggle-height: var(--toggle-medium-height);
+  --toggle-radius: calc(var(--toggle-height) / 2);
+
+  --dot-gap: 5px; // fixed value
+  --toggle-dot-height: calc(var(--toggle-height) - var(--dot-gap) * 2);
+  --toggle-dot-width: var(--toggle-dot-height);
+  --toggle-dot-width-pressed: calc(var(--toggle-dot-width) + 4px);
+  
+  display: flex;
+  align-items: center;
+  
+  &.-small {
+    --toggle-width: var(--toggle-small-width);
+    --toggle-height: var(--toggle-small-height);
+    --dot-gap: 4px; // fixed value
+  }
+
+  .ui-toggle {
+    @include check-radio-toggle-common;
+
+    &:disabled {
+      & + label {
+        opacity: 0.3;
+      }
+    }
+
+    & + label {
+      // toggle area
+      .ui-toggle-dot {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: var(--toggle-width);
+        height: var(--toggle-height);
+        border-radius: var(--toggle-radius);
+        background-color: var(--toggle-bg-color);
+        transition: all 0.2s ease-in-out;
+
+        // toggle dot
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          margin: var(--dot-gap);
+          width: var(--toggle-dot-width);
+          height: var(--toggle-dot-height);
+          border-radius: calc(var(--toggle-dot-height) / 2);
+          background-color: var(--toggle-dot-color);
+          transition: all 0.2s ease-in-out;
+        }
+      }
+    }
+
+    &:checked {
+      & + label {
+        .ui-toggle-dot {
+          background-color: var(--toggle-bg-color-checked);
+          &::after {
+            left: calc(100% - var(--toggle-dot-width) - var(--dot-gap) * 2);
+          }
+        }
+      }
+    }
+  }
+}

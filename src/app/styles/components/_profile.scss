@@ -1,0 +1,37 @@
+.ui-profile {
+  display: flex;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+
+  .txt {
+    margin: auto;
+    @include font-heading(6, 500);
+    color: #fff;
+  }
+
+  &.-disabled {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255,255,255,0.6);
+      border-radius: 100%;
+    }
+  }
+}
+
+.bg-profile1 { background: linear-gradient(144.71deg, #D29DFF 15.7%, #967AFF 87.11%); }
+.bg-profile2 { background: linear-gradient(144.71deg, #79F1BE 15.7%, #5DBEF4 87.11%); }
+.bg-profile3 { background: linear-gradient(144.71deg, #F1E579 15.7%, #F4B85D 87.11%); }
+.bg-profile4 { background: linear-gradient(144.71deg, #79D3F1 15.7%, #5D93F4 87.11%); }
+.bg-profile5 { background: linear-gradient(144.71deg, #FFB682 15.7%, #FF8B8B 87.11%); }
+.bg-profile6 { background: linear-gradient(144.71deg, #F4A8F1 15.7%, #E36CE6 87.11%); }
+.bg-profile7 { background: linear-gradient(144.71deg, #FF9A9A 15.7%, #F56464 87.11%); }
+.bg-profile8 { background: linear-gradient(144.71deg, #9A9EFF 15.7%, #5770F2 87.11%); }
+.bg-dimmed { background: linear-gradient(144.71deg, #DCDCDC 15.7%, #9E9E9E 87.11%); }

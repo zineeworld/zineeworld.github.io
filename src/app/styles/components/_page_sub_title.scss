@@ -1,0 +1,21 @@
+.ui-page-sub-title-area {
+  padding-left: var(--spacing-x);
+  padding-right: var(--spacing-x);
+
+  .ui-page-sub-title {
+    display: flex;
+    align-items: center;
+    @include font-heading(5, 500);
+
+    em {
+      font-weight: 700;
+      color: var(--primary);
+    }
+  }
+
+  .ui-page-sub-title-desc {
+    margin-top: 8px;
+    @include font-body(2, 500);
+    color: var(--text8);
+  }
+}

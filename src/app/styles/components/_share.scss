@@ -1,0 +1,9 @@
+.ui-share {
+  text-align: center;
+  .txt-share {
+    @include font-body(1);
+  }
+  .ui-image {
+    margin: var(--spacing-y) auto 0;
+  }
+}

@@ -1,0 +1,103 @@
+.ui-chips-field-area {
+  padding: 0 var(--spacing-x);
+  .ui-input-label {
+    @include font-body(3, 700);
+  }
+}
+
+.ui-chips-area {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 8px 4px;
+  &.-grid3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  &.-grid4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.ui-chip-area {
+  position: relative;
+  flex: 1;
+
+  .ui-chip-input {
+    position: absolute;
+    top: -1000%;
+    left: -1000%;
+    &:checked {
+      & + label {
+        border-color: var(--text2);
+        background-color: #fff;
+        color: var(--text2);
+        .ui-icon {
+          color: inherit;
+        }
+        .ui-icon-check {
+          color: var(--success);
+        }
+      }
+    }
+    &:disabled {
+      & + label {
+        border: 0;
+        background-color: var(--bg100);
+        color: var(--texti);
+        opacity: 0.4;
+        cursor: not-allowed;
+        .ui-icon {
+          color: inherit;
+        }
+      }
+    }
+    & + label {
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .ui-chip-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 4px;
+    min-height: 48px;
+    border-radius: 8px;
+    background-color: var(--bg100);
+    border: 1px solid var(--bg100);
+    color: var(--text9);
+    @include font-body(2);
+    transition: all 0.25s;
+    cursor: pointer;
+    @include gap(4px);
+    box-sizing: border-box;
+
+    .slot {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      .ui-icon {
+        color: inherit;
+      }
+    }
+  }
+}
+
+.ui-chips-area.-inline {
+  display: block;
+  margin: {
+    top: -8px;
+    left: -8px;
+  }
+  .ui-chip-area {
+    display: inline-block;
+    margin: {
+      top: 8px;
+      left: 8px;
+    }
+    .ui-chip-label {
+      padding: 0 18px;
+    }
+  }
+}

@@ -1,0 +1,143 @@
+.ui-tooltip-wrapper {
+  --tooltip-gap: 8px;
+  position: relative;
+  display: inline-block;
+
+  &.-center {
+    text-align: center;
+  }
+
+  .ui-tooltip.-text{
+    display: flex;
+    align-items: center;
+    .ui-icon {
+      color: inherit;
+    }
+    &.-large {
+      @include font-body(1);
+      color: var(--text2);
+    }
+    &.-medium {
+      @include font-body(2);
+      color: var(--text5);
+    }
+    &.-small {
+      @include font-body(3);
+      color: var(--text9);
+    }
+  }
+
+  .ui-tooltip.-balloon {
+    position: relative;
+    margin: 0 auto 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    background-color: var(--secondary);
+    width: fit-content;
+    @include font-caption(1, 700);
+    color: white;
+    white-space: nowrap;
+
+    &.-absolute {
+      position: absolute;
+      bottom: calc(100% + var(--tooltip-gap));
+    }
+
+    &:not(.-absolute)::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    // 역삼각형 꼭지
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      width: 0;
+      height: 0;
+      border-left: 4px solid transparent;
+      border-right: 4px solid transparent;
+      border-top: 4px solid var(--secondary);
+    }
+
+    &.-primary {
+      background-color: var(--primary);
+      &::after {
+        border-top-color: var(--primary);
+      }
+    }
+
+    &.-success {
+      background-color: var(--success);
+      &::after {
+        border-top-color: var(--success);
+      }
+    }
+
+    &.-warning,
+    &.-error {
+      background-color: var(--error08);
+      color: var(--error);
+      &::after {
+        border-top-color: var(--error08);
+      }
+    }
+
+    &.-absolute {
+      &.-top-left {
+        left: 0;
+        &::after {
+          left: 12px;
+          transform: translateX(-50%);
+        }
+      }
+      &.-top-center {
+        left: 50%;
+        transform: translateX(-50%);
+        &::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+      &.-top-right {
+        right: 0;
+        &::after {
+          right: 12px;
+          transform: translateX(50%);
+        }
+      }
+
+      &.-bottom-left {
+        top: auto;
+        bottom: calc(-100% - var(--tooltip-gap));
+        left: 0;
+        &::after {
+          top: -4px;
+          left: 12px;
+          transform: translateX(-50%) rotate(180deg);
+        }
+      }
+      &.-bottom-center {
+        top: auto;
+        bottom: calc(-100% - var(--tooltip-gap));
+        left: 50%;
+        transform: translateX(-50%);
+        &::after {
+          top: -4px;
+          left: 50%;
+          transform: translateX(-50%) rotate(180deg);
+        }
+      }
+      &.-bottom-right {
+        top: auto;
+        bottom: calc(-100% - var(--tooltip-gap));
+        right: 0;
+        &::after {
+          top: -4px;
+          right: 12px;
+          transform: translateX(50%) rotate(180deg);
+        }
+      }
+    }
+  }
+}

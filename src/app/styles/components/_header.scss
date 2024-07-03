@@ -1,0 +1,57 @@
+.ui-header-area {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: var(--z-index-header);
+
+  & + .ui-content .ui-tabs-area:first-of-type {
+    .ui-tabs-list {
+      padding-top: 8px;
+    }
+  }
+}
+
+.ui-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--spacing-x);
+  height: var(--header-height);
+  background-color: #fff;
+  color: var(--text2);
+  z-index: var(--z-index-header);
+  
+  &.-fixed {
+    position: sticky;
+    top: 0;
+  }
+
+  .ui-icon {
+    color: inherit;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+    cursor: pointer;
+    color: var(--text5);
+
+    .icon-setting {
+      color: var(--texti);
+    }
+  }
+
+  .ui-header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    // 100% - 양여백(24*2) - 아이콘(32*2) - 간격(8*2)
+    max-width: calc(100% - 48px - 64px - 16px);
+    @include font-heading(6);
+    @include ellipsis;
+  }
+}

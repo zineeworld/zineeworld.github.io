@@ -1,0 +1,28 @@
+.ui-card {
+  border-radius: 16px;
+  background-color: #FFF;
+  &.bg-100 {
+    background-color: var(--bg100);
+  }
+  &.bg-200 {
+    background-color: var(--bg200);
+  }
+  &.-line{
+    border: 1px solid var(--border100);
+  }
+}
+
+.ui-card-group {
+  display: flex;
+  gap: var(--box-gap);
+  .ui-card {
+    flex: 1 1 0;
+  }
+  &.-column {
+    flex-direction: column;
+  }
+  &.-row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

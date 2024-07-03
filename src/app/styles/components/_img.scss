@@ -1,0 +1,9 @@
+.ui-image {
+  display: block;
+  &.-full {
+    width: 100%;
+  }
+  &.-spacing{
+    padding: 0 var(--spacing-x);
+  }
+}

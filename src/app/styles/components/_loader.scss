@@ -1,0 +1,35 @@
+.ui-loader {
+  display: inline-block;
+  
+  .ui-image-loader {
+    display: block;
+  }
+
+  &.-capsule{
+    display: inline-flex;
+    @include column-gap(6px);
+    align-items: center;
+    background-color: #fff;
+    border-radius: 40px;
+    border:1px solid var(--primary);
+    box-sizing: border-box;
+    padding: 8px 24px 8px 16px;
+    position: fixed;
+    left:50%;
+    bottom:0;
+    transform: translateX(-50%);
+    margin-bottom: max(24px, constant(safe-area-inset-bottom));
+    margin-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+
+  &.-more{
+    margin-top: var(--spacing-x);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+.ui-loader-label{
+  @include font-body(1,700);
+}

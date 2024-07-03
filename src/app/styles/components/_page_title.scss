@@ -1,0 +1,27 @@
+.ui-page-title-area {
+	padding-left: var(--spacing-x);
+	padding-right: var(--spacing-x);
+
+	.ui-page-title {
+		@include font-heading(4);
+		color: var(--text2);
+		span, b, strong, i, em {
+			font-size: inherit;
+		}
+		i {
+			display: block;
+			font-style: normal;
+			font-weight: 300;
+		}
+	}
+
+	.ui-page-desc {
+		@include font-body(1);
+		color: var(--text9);
+	}
+
+	.ui-page-desc2 {
+		@include font-body(2);
+		color: var(--text9);
+	}
+}

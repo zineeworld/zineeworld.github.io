@@ -1,9 +1,9 @@
-import Image from "next/image";
+import { LayoutBase } from "./components/LayoutBase";
 
 export default function Home() {
   return (
-   <div>
-    <h1>HOME</h1>
-   </div>
+    <LayoutBase>
+      <h1>HOME</h1>
+   </LayoutBase>
   );
 }

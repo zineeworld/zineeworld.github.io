@@ -1,0 +1,53 @@
+// Typography
+@mixin font-style($size, $lineHeight: normal) {
+  font-size: $size !important;
+  line-height: $lineHeight !important;
+}
+
+@mixin font-heading($size, $weight: 700) {
+  @if $size == 1 {
+    @include font-style(36px);
+  }
+  @if $size == 2 {
+    @include font-style(30px);
+  }
+  @if $size == 3 {
+    @include font-style(28px);
+  }
+  @if $size == 4 {
+    @include font-style(24px, 31px);
+  }
+  @if $size == 5 {
+    @include font-style(20px, 28px);
+  }
+  @if $size == 6 {
+    @include font-style(18px, 24px);
+  }
+  font-weight: $weight;
+}
+
+@mixin font-body($size, $weight: 500) {
+  @if $size == 1 {
+    @include font-style(16px, 22px);
+  }
+  @if $size == 2 {
+    @include font-style(14px, 20px);
+  }
+  @if $size == 3 {
+    @include font-style(13px, 19px);
+  }
+  font-weight: $weight;
+}
+
+@mixin font-caption($size, $weight: 500) {
+  @if $size == 1 {
+    @include font-style(12px, 16px);
+  }
+  @if $size == 2 {
+    @include font-style(11px, 15px);
+  }
+  @if $size == 3 {
+    @include font-style(10px);
+  }
+  font-weight: $weight;
+}

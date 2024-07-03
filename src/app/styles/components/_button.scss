@@ -1,0 +1,358 @@
+/* ========================================================= */
+/* button variables                                          */
+/* ========================================================= */
+
+:root {
+  /* size > xlarge */
+  --btn-xlarge-padding: 16px;
+  --btn-xlarge-height: 56px;
+  --btn-xlarge-radius: 12px;
+
+  /* size > large */
+  --btn-large-padding: 16px;
+  --btn-large-height: 48px;
+  --btn-large-radius: 8px;
+
+
+  /* size > medium */
+  --btn-medium-padding: 16px;
+  --btn-medium-height: 40px;
+  --btn-medium-radius: 8px;
+
+  /* size > small */
+  --btn-small-padding: 14px;
+  --btn-small-height: 36px;
+  --btn-small-radius: 8px;
+
+  /* size > xsmall */
+  --btn-xsmall-padding: 12px;
+  --btn-xsmall-height: 32px;
+  --btn-xsmall-fixed-width: 160px;
+  --btn-xsmall-radius: 6px;
+
+  /* size > fixed-width */
+  --btn-fixed-large-width: 264px;
+  --btn-fixed-medium-width: 196px;
+  --btn-fixed-small-width: 96px;
+
+  /* type(solid) > primary */
+  --btn-solid-primary-bg-color: var(--primary);
+  --btn-solid-primary-font-color: white;
+
+  /* type(solid) > secondary */
+  --btn-solid-secondary-bg-color: var(--primary08);
+  --btn-solid-secondary-font-color: var(--primary);
+
+  /* type(solid) > tertiary */
+  --btn-solid-tertiary-bg-color: var(--bg200);
+  --btn-solid-tertiary-font-color: var(--text5);
+
+  /* type(solid) > info */
+  --btn-solid-info-bg-color: var(--bg100);
+  --btn-solid-info-font-color: var(--text2);
+
+  /* type(solid) > danger */
+  --btn-solid-danger-bg-color: var(--error08);
+  --btn-solid-danger-font-color: var(--error);
+
+  /* type(line) > default */
+  --btn-line-default-border-color: var(--text2);
+  --btn-line-default-font-color: var(--text2);
+
+  /* type(text) */
+  --btn-text-gray1-font-color: var(--text2);
+  --btn-text-gray2-font-color: var(--text5);
+  --btn-text-gray3-font-color: var(--text9);
+  --btn-text-point1-font-color: var(--secondary);
+  --btn-text-point2-font-color: var(--primary);
+}
+
+// button common
+%btnCommonStyle {
+  display: inline-flex;
+  @include gap(4px);
+  flex: 0 0 auto;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  line-height: normal;
+  font-style: normal;
+  transition: background-color 0.25s, border 0.25s;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  outline: none;
+  user-select: none;
+  vertical-align: bottom;
+
+  &:disabled {
+    cursor: not-allowed;
+
+    .ui-icon {
+      color: var(--texti);
+    }
+  }
+
+  &.-unvisible {
+    visibility: hidden;
+  }
+
+  .ui-icon {
+    display: inline-flex;
+    align-items: center;
+    color: inherit;
+  }
+}
+
+.ui-button:not(.-text) {
+  @extend %btnCommonStyle;
+
+  &.-in-progress {
+    @include gap(0);
+    font-size: 0;
+    cursor: default;
+    pointer-events: none;
+
+    .ui-spinner {
+      display: block;
+    }
+  }
+
+  &.-full-width {
+    width: 100%;
+  }
+
+  &:not(.-ghost) .ui-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &.-only-icon {
+    color: var(--texti);
+
+    .ui-icon {
+      display: flex;
+      margin: auto;
+
+      &.-fitted {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &.-xlarge,
+    &.-large {
+      .ui-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    &.-xxsmall {
+      width: 24px;
+      height: 24px;
+    }
+
+    &.-in-progress {
+      .ui-icon {
+        display: none;
+      }
+    }
+  }
+
+  &.-reaction{
+    padding: 6px !important;
+    span{
+      @include font-body(2, 500);
+    }
+
+  }
+
+  &:not(.-only-icon) {
+    .ui-icon {
+      margin: 0 -2px;
+    }
+
+    &.-xlarge,
+    &.-large {
+      .ui-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+// button size
+$sizes: "xlarge", "large", "medium", "small", "xsmall";
+@each $size in $sizes {
+  $btn-padding: var(--btn-#{$size}-padding);
+  $btn-height: var(--btn-#{$size}-height);
+  $btn-radius: var(--btn-#{$size}-radius);
+
+  .ui-button:not(.-text).-#{$size} {
+    padding: 0 $btn-padding;
+    height: $btn-height;
+    border-radius: $btn-radius;
+
+    @if $size == "xlarge" {
+      @include font-body(1, 700);
+    }
+    @if $size == "large" {
+      @include font-body(1, 700);
+    }
+    @if $size == "medium" {
+      @include font-body(2, 500);
+    }
+    @if $size == "small" {
+      @include font-body(2, 500);
+    }
+    @if $size == "xsmall" {
+      @include font-body(3, 500);
+    }
+  }
+
+  .ui-button.-#{$size}.-only-icon {
+    @include gap(0);
+    padding: 0 !important;
+    width: $btn-height;
+    height: $btn-height;
+    font-size: 0 !important;
+  }
+}
+
+// button style > solid
+$solidColors: "primary", "secondary", "tertiary", "info", "danger";
+@each $color in $solidColors {
+  $btn-solid-bg-color: var(--btn-solid-#{$color}-bg-color);
+  $btn-solid-bg-color-active: var(--btn-solid-#{$color}-bg-color-active);
+  // $btn-solid-bg-color-disabled: var(--btn-solid-#{$color}-bg-color-disabled);
+  $btn-solid-font-color: var(--btn-solid-#{$color}-font-color);
+
+  .ui-button.-solid.-#{$color} {
+    background-color: $btn-solid-bg-color;
+    color: $btn-solid-font-color;
+
+    &:not(:disabled) {
+      &:active,
+      &.-active {
+        // background-color: $btn-solid-bg-color-active;
+        @if ($color == "primary") {
+          background-color: color-mix(in oklab, $btn-solid-bg-color, white 16%);
+        } @else {
+          background-color: color-mix(in oklab, $btn-solid-bg-color, black 2%);
+        }
+      }
+    }
+
+    &:disabled {
+      // background-color: $btn-solid-bg-color-disabled;
+      background-color: var(--bg100);
+      color: var(--texti);
+    }
+  }
+}
+
+// button style > line
+$lineColors: "default";
+@each $color in $lineColors {
+  $btn-line-border-color: var(--btn-line-#{$color}-border-color);
+  $btn-line-font-color: var(--btn-line-#{$color}-font-color);
+
+  .ui-button.-line.-#{$color} {
+    background-color: transparent;
+    border: 1px solid $btn-line-border-color;
+    color: $btn-line-font-color;
+
+    &:not(:disabled) {
+      &:active,
+      &.-active {
+        @if ($color == "default") {
+          background-color: color-mix(in oklab, white, black 2%);
+        }
+      }
+    }
+
+    &:disabled {
+      border: 0;
+      background-color: var(--bg100);
+      color: var(--texti);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------
+// button size > text
+$textBtnSizes: "xxlarge", "xlarge", "large", "medium", "small";
+@each $size in $textBtnSizes {
+  .ui-button.-text.-#{$size} {
+    @extend %btnCommonStyle;
+    width: fit-content;
+    gap: 0;
+
+    @if $size == "xxlarge" {
+      @include font-heading(1);
+      .ui-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @if $size == "xlarge" {
+      @include font-heading(4);
+      .ui-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @if $size == "large" {
+      @include font-body(1, 700);
+      .ui-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @if $size == "medium" {
+      @include font-body(2, 700);
+      .ui-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @if $size == "small" {
+      @include font-caption(1, 700);
+      .ui-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+// button style > text
+$textColors: "gray1", "gray2", "gray3", "point1", "point2";
+@each $color in $textColors {
+  $btn-text-font-color: var(--btn-text-#{$color}-font-color);
+
+  .ui-button.-text.-#{$color} {
+    color: $btn-text-font-color;
+    cursor: pointer;
+
+    &:disabled {
+      color: var(--text9);
+      opacity: 0.4;
+    }
+    
+  }
+}
+
+// ---------------------------------------------------------------------
+// button fixed-width
+$fixedWidthBtnSizes: "large", "medium", "small";
+@each $fixedSize in $fixedWidthBtnSizes {
+  $btn-width: var(--btn-fixed-#{$fixedSize}-width);
+  .ui-button.-fixed-#{$fixedSize} {
+    width: $btn-width;
+  }
+}

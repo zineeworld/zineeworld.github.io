@@ -1,0 +1,28 @@
+// when modal opens
+.ui-prevent-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 720px) {
+  body {
+    background-color: var(--bg200);
+  }
+  .ui-container {
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+  }
+}
+
+.ui-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+
+  .ui-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--spacing-x);
+  }
+}

@@ -1,0 +1,220 @@
+.ui-input-field-area {
+  padding: 0 var(--spacing-x);
+
+  // theme line
+  &.-line {
+    &.-large {
+      .ui-input {
+        height: 32px;
+        @include font-heading(5);
+      }
+
+      .ui-input-reactive {
+        height: auto;
+      }
+
+      .ui-input-unit-area {
+        @include font-heading(6, 500);
+      }
+    }
+
+    &.-medium {
+      .ui-input-label {
+        @include font-body(3, 700);
+      }
+
+      .ui-input {
+        height: 24px;
+        @include font-heading(6);
+      }
+
+      .ui-input-reactive {
+        height: auto;
+      }
+
+      .ui-input-button-area {
+        margin-bottom: -4px;
+      }
+
+      .ui-input-help-text {
+        @include font-caption(2);
+      }
+    }
+
+    .-disabled {
+      border-color: rgba(#DEE8EE, 0.6);
+      cursor: not-allowed;
+
+      .ui-input {
+        color: var(--text9);
+      }
+    }
+  }
+
+  // theme box
+  &.-box {
+    .ui-input-area {
+      padding: 0 16px;
+      border-width: 1px;
+      border-radius: 8px;
+      height: 58px;
+
+      &.-reactive {
+        padding: 16px;
+        height: auto;
+      }
+    }
+
+    .ui-input {
+      @include font-body(1);
+    }
+
+    .ui-input-help-text {
+      @include font-caption(2);
+    }
+
+    .-disabled {
+      border-color: var(--border200);
+      background-color: var(--bg100);
+
+      .ui-input {
+        background-color: var(--bg100);
+      }
+
+      .ui-input.-textarea {
+        flex-grow: 1;
+      }
+    }
+
+    // fake textarea
+    .ui-input-area.-textarea {
+      position: relative;
+      padding: 18px 16px;
+      height: inherit;
+      max-height: 124px;
+
+      .ui-button {
+        position: absolute;
+        right: 16px;
+        bottom: 13px;
+      }
+    }
+
+    // real textarea
+    .ui-input.-textarea {
+      flex: 0 0 calc(100% - 60px);
+      height: inherit;
+      max-height: 88px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      @include font-body(1);
+      letter-spacing: -0.5px;
+
+      &.-virtual {
+        flex: 1;
+        text-align: left;
+        color: var(--text9);
+        margin-left: -3px;
+      }
+    }
+  }
+}
+
+// label
+.ui-input-label {
+  @include font-body(2, 700);
+  color: var(--text2);
+
+  & + .ui-input-area, & + .ui-chips-area {
+    margin-top: 8px;
+  }
+
+  em {
+    color: var(--secondary);
+  }
+}
+
+// fake input
+.ui-input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  width: 100%;
+  border: 1px solid var(--border200);
+  border-width: 0 0 1px 0;
+
+  &:has(input:not([readonly]):focus),
+  &:has(textarea:not([readonly]):focus),
+  &.-focused {
+    border-color: var(--primary);
+  }
+
+  &.-error {
+    border-color: var(--error) !important;
+  }
+
+  // real input
+  .ui-input {
+    width: 100%;
+    color: var(--text2);
+    padding: 0; // legacy overwrite
+    border: 0; // legacy overwrite
+    &:not(.-textarea) {
+      @include ellipsis;
+    }
+
+    &.-no-cursor {
+      caret-color: transparent;
+    }
+
+    &[readonly] {
+      cursor: default;
+    }
+  }
+}
+
+// clear, search button
+.ui-input-button-area {
+  display: flex;
+  @include gap(8px);
+
+  .ui-button.-ghost.-only-icon .ui-icon {
+    width: 24px;
+    height: 24px;
+    color: var(--texti);
+  }
+}
+
+// unit (만원, 인증시간 등)
+.ui-input-unit-area {
+  flex-shrink: 0;
+  @include font-body(1);
+  color: var(--text9);
+}
+
+// help text
+.ui-input-help-area {
+  margin-top: 12px;
+
+  &.-between {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .ui-input-help-text {
+    margin-top: 0;
+  }
+
+  button:only-child {
+    margin-left: auto;
+  }
+}
+
+.ui-input-help-text {
+  margin-top: 8px;
+  @include font-body(3);
+  color: var(--text9);
+  word-break: break-all;
+}

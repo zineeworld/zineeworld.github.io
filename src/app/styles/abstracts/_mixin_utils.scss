@@ -1,0 +1,90 @@
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    flex-shrink: 1 !important;
+  }
+  @else {
+    display: -webkit-box;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@mixin safe-bottom($paddingBottom: var(--spacing-b)) {
+  padding-bottom: max($paddingBottom, constant(safe-area-inset-bottom)); 
+  padding-bottom: max($paddingBottom, env(safe-area-inset-bottom)); 
+}
+
+@mixin sticky-bottom-area($paddingTop: 16px) {
+  position: sticky;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-top: auto;
+  padding-top: $paddingTop;
+  padding-left: var(--spacing-x-narrow);
+  padding-right: var(--spacing-x-narrow);
+  background: linear-gradient(to bottom, transparent 0, white $paddingTop, white 100%);
+  z-index: 1;
+}
+
+@mixin gap($size) {
+  gap: $size;
+
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    & > * + * {
+      margin-left: $size;
+    }
+  }
+}
+
+@mixin column-gap($size) {
+  gap: $size;
+
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    & > * + * {
+      margin-left: unset;
+      margin-top: $size;
+    }
+  }
+}
+
+@mixin row-column-gap($row, $column) {
+  gap: $row $column;
+
+  @supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    & > * + * {
+      margin-left: unset;
+      margin-top: $column;
+    }
+  }
+}
+
+@mixin check-radio-toggle-common {
+  width: 0;
+  height: 0;
+  
+  & + label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-width: 100%;
+    cursor: pointer;
+    gap: 8px;
+    &.-reverse {
+      flex-direction: row-reverse;
+    }
+  }
+  &:disabled {
+    & + label {
+      cursor: not-allowed;
+      &::before {
+        cursor: not-allowed;
+      }
+    }
+  }
+}

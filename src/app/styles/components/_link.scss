@@ -1,0 +1,20 @@
+.ui-link {
+  @include font-body(2);
+  color: var(--text5);
+  text-decoration: underline;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.ui-link-desc {
+  text-align: center;
+  .txt-desc {
+    @include font-body(1);
+    color: var(--text9);
+  }
+  .ui-link {
+    display: inline-block;
+    margin-top: 6px;
+  }
+}

@@ -1,0 +1,116 @@
+:root {
+  /* type(text) */
+  --select-gray1-font-color: var(--text2);
+  --select-gray2-font-color: var(--text5);
+  --select-gray3-font-color: var(--text9);
+  --select-point1-font-color: var(--secondary);
+  --select-point2-font-color: var(--primary);
+}
+.ui-select {
+  display: inline-flex;
+  align-items: center;
+  color: var(--text2);
+  cursor: pointer;
+  
+  .ui-icon {
+    margin-left: 4px;
+  }
+  
+  &.-type-a {
+    padding: 0 8px;
+    height: 24px;
+    @include font-body(2);
+    border-radius: 5px;
+    background-color: var(--bg100);
+    color: var(--text5);
+    .ui-icon {
+      color: inherit;
+    }
+  }
+  
+  &.-type-b {
+    padding: 0 16px;
+    height: 40px;
+    @include font-heading(6, 500);
+    border-radius: 8px;
+    background-color: var(--bg100);
+    .ui-icon {
+      color: var(--text5);
+    }
+  }
+  
+  &.-type-c {
+    padding: 0 16px;
+    height: 40px;
+    @include font-heading(6, 500);
+    border-radius: 20px;
+    border: 1px solid currentColor;
+    .ui-icon {
+      color: inherit;
+    }
+  }
+  
+  &.-type-d {
+    display: flex;
+    @include font-heading(5);
+    .ui-icon {
+      color: var(--text9);
+    }
+
+  }
+}
+// select size > type-d
+
+$selectSizes: "xlarge", "large", "medium", "small";
+@each $size in $selectSizes {
+  .ui-select.-type-d.-#{$size} {
+    width: fit-content;
+    gap: 0;
+
+    @if $size == "xlarge" {
+      @include font-heading(1);
+      .ui-icon {
+        width: 24px;
+        height: 24px;
+      }
+    }
+    @if $size == "large" {
+      @include font-body(1, 700);
+      .ui-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @if $size == "medium" {
+      @include font-body(2, 700);
+      .ui-icon {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    @if $size == "small" {
+      @include font-caption(1, 700);
+      .ui-icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+// select style > type-d
+$textColors: "gray1", "gray2", "gray3", "point1", "point2";
+@each $color in $textColors {
+  $select-color: var(--select-#{$color}-font-color);
+
+  .ui-select.-type-d.-#{$color} {
+    color: $select-color;
+    cursor: pointer;
+
+    &:disabled {
+      color: var(--text9);
+      opacity: 0.4;
+    }
+
+  }
+}

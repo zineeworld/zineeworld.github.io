@@ -1,0 +1,127 @@
+.ui-button-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  @include gap(8px);
+
+  &.-no-gap {
+    @include gap(0);
+  }
+
+  &.-column {
+    width: 100%;
+    flex-direction: column;
+    .ui-button {
+      width: 100%;
+    }
+    @include column-gap(8px);
+    
+    &.-no-gap {
+      @include column-gap(0);
+    }
+  }
+
+  &:not(.-column).-fitted {
+    flex: 1 1 0;
+    .ui-button:not(.-only-icon) {
+      flex: 1 1 0;
+    }
+  }
+
+  &.-select {
+    padding:0 var(--spacing-x);
+  }
+
+  &.-date {
+    @include gap(0);
+    .txt-label {
+      @include font-heading(5, 700);
+    }
+  }
+  // 주로 리얼리에서 쓰임 ----------------
+  // '반응' 버튼
+  &.-reaction {
+    display: inline-flex;
+    @include gap(12px);
+    .ui-button-group {
+      display: inline-flex;
+      @include gap(6px);
+      padding: 0;
+    }
+    .txt-reaction {
+      @include font-body(2, 500);
+      color:var(--text9);
+    }
+  }
+  // '이동' 버튼
+  &.-link {
+    justify-content: center;
+    height: 36px;
+  }
+
+  // '나중에' 버튼
+  .ui-button.btn-later {
+    padding: 0 24px;
+    max-width: fit-content;
+    @extend %btnCommonStyle;
+    height: 32px;
+    @include font-body(1);
+    color: var(--text5);  
+  }
+
+  // 유도 문장
+  .ui-button-text {
+    padding: 5px 0;
+    @include font-body(1);
+    color: var(--text5);
+    text-align: center;
+    em {
+      color: var(--secondary);
+    }
+  }
+
+  // '선택형( check,radio 와 동일)' 버튼
+  .ui-button.btn-select {
+    padding: 20px 24px;
+    @extend %btnCommonStyle;
+    min-height: 62px;
+    border-radius: 16px;
+    display: block !important;
+    .ui-button-title {
+      display: block;
+      text-align: left;
+      @include font-body(1);
+    }
+    .ui-button-desc {
+      padding-top: 8px;
+      display: block;
+      text-align: left;
+      @include font-body(2);
+      color: var(--text5);
+    }
+    .ui-label-group{
+      padding-top: 4px;
+    }
+    .ui-button-value {
+      padding-top: 12px;
+      display: block;
+      text-align: left;
+      @include font-body(1, 700);
+    }
+  }
+}
+
+.ui-check-button {
+  position: relative;
+  display: flex;
+  width: 100%;
+  .ui-button.btn-select {
+    padding-right: 48px;
+    pointer-events: none;
+  }
+  .ui-checkbox-area {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+  }
+}

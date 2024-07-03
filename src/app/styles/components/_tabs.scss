@@ -1,0 +1,201 @@
+.ui-tabs-area {
+  &.-sticky {
+    position: sticky !important;
+    top: calc(var(--header-height)) !important;
+    z-index: 1;
+  }
+
+  .ui-tabs-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    z-index: var(--z-index-tabs);
+
+    &.-default {
+      padding: 0 var(--spacing-x);
+      border-bottom: 1px solid var(--border100);
+      &.-sticky {
+        position: sticky !important;
+        top: calc(var(--header-height)) !important;
+      }
+      &.-fit-content {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+    }
+
+    &.-capsule {
+      padding: 3px;
+      height: 40px;
+      border-radius: 8px;
+      background-color: var(--bg200);
+
+      &.-small {
+        display: inline-flex;
+        height: 38px;
+      }
+    }
+
+    &.-filter {
+      --filter-size: 34px;
+      --filter-height: var(--filter-size);
+      --filter-bottom-gap: 8px;
+
+      padding: 0 var(--spacing-x);
+      margin-bottom: calc(-1 * var(--filter-bottom-gap));
+      overflow-x: auto;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &.-multiline {
+        padding-right: 70px;
+        &.-sticky {
+          position: sticky !important;
+          top: calc(var(--header-height)) !important;
+        }
+        &.-filter-open {
+          flex-wrap: wrap;
+          margin-bottom: calc(-1 * var(--filter-bottom-gap));
+        }
+      }
+    }
+  }
+
+  .btn-more-area {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-left: 16px;
+    padding-right: var(--spacing-x);
+    margin-bottom: var(--filter-bottom-gap);
+    background: linear-gradient(to right, rgba(255,255,255,0) 0, white 16px, white 100%);
+    z-index: var(--z-index-tabs-more);
+    .btn-more {
+      display: flex;
+      width: var(--filter-size);
+      height: var(--filter-size);
+      border: 1px solid var(--text2);
+      border-radius: calc(var(--filter-height) / 2);
+      color: var(--text2);
+
+      .ui-icon {
+        margin: auto;
+        color: inherit;
+      }
+    }
+  }
+  
+  .ui-tabs-item {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    .slot {
+      position: relative;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.-default {
+      height: 56px;
+      @include font-body(1, 700);
+      color: var(--text9);
+
+      &:not(.-large) {
+        &.-equally {
+          flex: 1;
+          padding: 0 16px;
+        }
+        &.-fit-content {
+          padding: 0 16px;
+        }
+      }
+
+      &.-large {
+        @include font-heading(6);
+        & + .-large {
+          margin-left: 32px;
+        }
+        &.-fit-content {
+          padding: 0;
+        }
+        &.-active::after {
+          height: 4px;
+        }
+      }
+
+      &.-active {
+        position: relative;
+        color: var(--text2);
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          display: block;
+          height: 2px;
+          background-color: var(--text2);
+        }
+      }
+    }
+
+    &.-capsule {
+      padding: 0 12px;
+      height: 100%;
+      border-radius: 6px;
+      @include font-body(1, 700);
+      color: var(--text9);
+      &.-small {
+        @include font-body(2, 700);
+      }
+
+      &:not(.-small) {
+        flex: 1;
+      }
+
+      &.-active {
+        background-color: #fff;
+        color: var(--text2);
+      }
+      .ui-badge {
+        display: none;
+      }
+    }
+
+    &.-filter {
+      padding: 0 16px;
+      height: var(--filter-height);
+      border: 1px solid var(--border100);
+      border-radius: 17px;
+      background-color: #fff;
+      @include font-body(2);
+      color: var(--text9);
+
+      &:not(:only-child) {
+        margin-right: 4px;
+        margin-bottom: var(--filter-bottom-gap);
+      }
+
+      &.-active {
+        border-color: var(--text2);
+        background-color: var(--text2);
+        color: white;
+      }
+
+      .slot {
+        @include gap(8px);
+      }
+
+      .ui-icon {
+        margin: 0 -4px;
+      }
+    }
+  }
+}

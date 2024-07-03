@@ -1,0 +1,561 @@
+// 약관 스타일 추가
+//
+// [POP] 약관 페이지 (개발 전달 공유)
+// [LNG] 약관 페이지 파일 이관 으로 스타일 필요
+
+.ptitle {
+  //@include set-typo($-size:16,$-weight:700);
+  @include font-body(1, $weight: 700);
+  margin-bottom: 8px;
+
+  &:not(:first-child) {
+    margin-top: 8px;
+  }
+
+  &+p {
+    margin: 1em 0;
+  }
+}
+
+.tbl {
+  &_tit {
+    //@include set-typo($-size:16,$-weight:700);
+    @include font-body($size: 1, $weight: 700);
+  }
+
+  &_v01 {
+    table {
+      width: 100%;
+      border-bottom: 1px solid var(--border100);
+      border-collapse: collapse;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: #999;
+        clear: both;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+    }
+
+    th,
+    td {
+      padding: 10px;
+      color: var(--text2);
+      line-height: 20px;
+      box-sizing: border-box;
+
+      &:not(:first-child) {
+        border-left: 1px solid var(--border100);
+      }
+    }
+
+    th {
+      padding: 5px 10px 5px;
+      background: #F8F8F8;
+    }
+
+    td {
+      border-top: 1px solid var(--border100);
+    }
+  }
+
+  &_w01 {
+    table {
+      width: 100%;
+      border-bottom: 1px solid var(--border100);
+      border-collapse: collapse;
+      position: relative;
+
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 1px;
+        background-color: #999;
+        clear: both;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+      }
+
+      caption {
+        display: none;
+      }
+    }
+
+    th,
+    td {
+      padding: 13px 10px;
+      height: 30px;
+      border-top: 1px solid var(--border100);
+      color: var(--text2);
+      line-height: 20px;
+      box-sizing: border-box;
+    }
+
+    th {
+      background: #f9f9f9;
+    }
+
+    p {
+      + p {
+        margin-top: 8px;
+      }
+    }
+
+  }
+}
+
+div[data-code*="M"] {
+  p {
+    //@include set-typo($-size:14,$-weight:500,$-line:20);
+    @include font-body(2);
+  }
+}
+
+.agree_details {
+  text-align: left;
+
+  h3 {
+    @include font-heading(6);
+    margin-bottom: 16px;
+    + * {
+      margin-bottom: 20px;
+    }
+  }
+
+  h4,
+  h5 {
+    @include font-body(1, 700);
+    margin-bottom: 8px;
+  }
+
+  li {
+    word-break: keep-all;
+  }
+  ul, ol {
+    li {
+      width: calc(100% - 20px);
+      padding-left: 20px;
+      position: relative;
+      &::before {
+        display: inline-block;
+        clear: both;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        position:absolute;
+        left:0;
+        top:0;
+      }
+      & + li {
+        margin-top: 8px;
+      }
+      ul, ol {
+        margin-top: 8px;
+      }
+    }
+  }
+
+  ul {
+    li {
+      &:not(:first-child) {
+        margin-top: 8px;
+      }
+
+      width: calc(100% - 20px);
+      padding-left:20px;
+      white-space: pre-line;
+      position: relative;
+
+      &::before {
+        display: inline-block;
+        clear: both;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        content: '\30FB' !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+
+      &.-info {
+        &::before {
+          content: '\0203B' !important;
+        }
+      }
+
+      ol,
+      ul {
+        margin: {
+          left: -10px;
+          top: 8px;
+        }
+
+        &>li {
+          color: var(--text9);
+        }
+      }
+
+      ul {
+        &>li {
+          &::before {
+            content: '\2012' !important;
+          }
+        }
+
+        &.list--dash,
+        &.-dash {
+          &>li {
+            &::before {
+              content: '\2012' !important;
+            }
+          }
+        }
+
+        &.list--dot,
+        &.-dot,
+        &.list--disc,
+        &.-disc {
+          &>li {
+            &::before {
+              content: '\30FB' !important;
+            }
+          }
+        }
+
+        &.list--square,
+        &.-square {
+          &>li {
+            &::before {
+              content: '\25AA' !important;
+            }
+          }
+        }
+
+        &.list--info,
+        &.-info {
+          &::before {
+            content: '\0203B' !important;
+          }
+        }
+
+        &.list--star,
+        &.-star {
+          &>li {
+            &::before {
+              content: '*' !important;
+            }
+          }
+        }
+
+        &.list--word,
+        &.-word {
+          &>li {
+            &:nth-of-type(1) {
+              &::before {
+                content: '가.' !important;
+              }
+            }
+
+            &:nth-of-type(2) {
+              &::before {
+                content: '나.' !important;
+              }
+            }
+
+            &:nth-of-type(3) {
+              &::before {
+                content: '다.' !important;
+              }
+            }
+
+            &:nth-of-type(4) {
+              &::before {
+                content: '라.' !important;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    &.list--star,
+    &.-star {
+      &>li {
+        &::before {
+          content: '*' !important;
+        }
+      }
+    }
+  }
+  ol {
+    counter-reset: number;
+    &.list--num,
+    &.-num {
+      & > li {
+        &::before {
+          content: counter(number)'. ' !important;
+          counter-increment: number 1;
+        }
+      }
+    }
+
+    &.list--num_bracket,
+    &.-num-bracket {
+      & > li {
+        &::before {
+          content: counter(number)') ' !important;
+          counter-increment: number 1;
+        }
+      }
+    }
+
+    &.list--num_circle,
+    &.-num-circle {
+      & > li {
+        &:nth-of-type(1) {
+          &::before {
+            content: '\2460' !important;
+          }
+        }
+
+        &:nth-of-type(2) {
+          &::before {
+            content: '\2461' !important;
+          }
+        }
+
+        &:nth-of-type(3) {
+          &::before {
+            content: '\2462' !important;
+          }
+        }
+
+        &:nth-of-type(4) {
+          &::before {
+            content: '\2463' !important;
+          }
+        }
+
+        &:nth-of-type(5) {
+          &::before {
+            content: '\2464' !important;
+          }
+        }
+
+        &:nth-of-type(6) {
+          &::before {
+            content: '\2465' !important;
+          }
+        }
+
+        &:nth-of-type(7) {
+          &::before {
+            content: '\2466' !important;
+          }
+        }
+
+        &:nth-of-type(8) {
+          &::before {
+            content: '\2467' !important;
+          }
+        }
+
+        &:nth-of-type(9) {
+          &::before {
+            content: '\2468' !important;
+          }
+        }
+
+        &:nth-of-type(10) {
+          &::before {
+            content: '\2469' !important;
+          }
+        }
+
+        &:nth-of-type(11) {
+          &::before {
+            content: '\246A' !important;
+          }
+        }
+
+        &:nth-of-type(12) {
+          &::before {
+            content: '\246B' !important;
+          }
+        }
+
+        &:nth-of-type(13) {
+          &::before {
+            content: '\246C' !important;
+          }
+        }
+
+        &:nth-of-type(14) {
+          &::before {
+            content: '\246D' !important;
+          }
+        }
+
+        &:nth-of-type(15) {
+          &::before {
+            content: '\246E' !important;
+          }
+        }
+
+        &:nth-of-type(16) {
+          &::before {
+            content: '\246F' !important;
+          }
+        }
+
+        &:nth-of-type(17) {
+          &::before {
+            content: '\2470' !important;
+          }
+        }
+
+        &:nth-of-type(18) {
+          &::before {
+            content: '\2471' !important;
+          }
+        }
+
+        &:nth-of-type(19) {
+          &::before {
+            content: '\2472' !important;
+          }
+        }
+
+        &:nth-of-type(20) {
+          &::before {
+            content: '\2473' !important;
+          }
+        }
+      }
+    }
+  }
+
+  p.list--dot {
+    position: relative;
+    width: calc(100% - 13px);
+  }
+  p{
+    &.-disc {
+      width: calc(100% - 20px);
+      padding-left:20px;
+      white-space: pre-line;
+      position: relative;
+      &::before {
+        display: inline-block;
+        clear: both;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        content: '\30FB' !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+    &.-star{
+      width: calc(100% - 20px);
+      padding-left:20px;
+      white-space: pre-line;
+      position: relative;
+      &::before {
+        display: inline-block;
+        clear: both;
+        width: 20px;
+        height: 20px;
+        text-align: center;
+        line-height: 20px;
+        content: '*' !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+
+  table {
+    input[type="checkbox"] {
+      display: inline-block;
+
+      &+label {
+        padding-left: 4px;
+      }
+    }
+    & + table{
+      margin-top: 20px;
+    }
+  }
+  .ly-chk {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+
+    input[type="checkbox"] {
+      appearance: auto;
+      margin: {
+        left: 4px;
+        right: 4px;
+      }
+
+      &+label {
+        margin-left: 0;
+      }
+    }
+
+    label {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+  .ly-radio{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    input[type="radio"] {
+      appearance: auto;
+      margin: {
+        left: 4px;
+        right: 4px;
+      }
+
+      &+label {
+        margin-left: 0;
+      }
+    }
+
+    label {
+      display: inline-block;
+
+      &:not(:first-child) {
+        margin-left: 5px;
+      }
+    }
+  }
+
+  & > div{
+    & + div{
+      margin-top: 20px;
+    }
+  }
+}

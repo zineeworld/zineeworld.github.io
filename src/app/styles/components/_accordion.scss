@@ -1,0 +1,153 @@
+.ui-accordion-area {
+	&.-default {
+		.ui-accordion-item-title {
+			padding: 20px var(--spacing-x);
+			@include font-body(1, 700);
+		}
+	}
+
+	&.-list {
+		.ui-accordion-item-title {
+			padding: var(--spacing-y) var(--spacing-x);
+			@include font-body(1, 700);
+			.ui-list-item.-default {
+				padding: 0;
+				min-height: 46px;
+			}
+		}
+	}
+
+	&.-terms {
+		.ui-accordion-header {
+			display: flex;
+			align-content: center;
+			padding: 0 var(--spacing-x);
+		}
+
+		.ui-accordion-item-title {
+			align-items: flex-start;
+			padding: 8px var(--spacing-x);
+			border: none;
+
+			&::after {
+				display: none;
+			}
+
+			.ui-checkbox-label {
+				align-items: flex-start;
+				padding-top: 4px;
+				.slot {
+					padding-top: 1px;
+				}
+			}
+
+			.ui-button-accordion {
+				margin-left: 8px;
+				margin-right: -8px;
+			}
+		}
+
+		.ui-accordion-item-content {
+			background-color: var(--bg100);
+
+			& > .inner {
+				padding: 0;
+			}
+
+			.ui-list-item {
+				.inner-right {
+					// padding-right: 8px;
+				}
+
+				&.-checkbox {
+					.ui-checkbox-label {
+						.slot {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.ui-accordion-item {
+
+	&:first-child {
+		.ui-accordion-title {
+			border-top: 1px solid var(--border100);
+		}
+	}
+
+	&.-active {
+		.ui-accordion-item-title {
+			svg {
+				transform: rotate(180deg);
+			}
+		}
+
+		.ui-accordion-item-content {
+			max-height: 100000px;
+
+			@media not all and (min-resolution:.001dpcm) {
+				height: fit-content;
+			}
+		}
+	}
+}
+
+.ui-accordion-item-title {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex: 1;
+	padding: 16px var(--spacing-x);
+	background-color: white;
+	cursor: pointer;
+	&.-line {
+		border-top: 1px solid var(--border100);
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -1px;
+			display: inline-block;
+			width: 100%;
+			height: 1px;
+			background-color: var(--border100);
+		}
+	}
+	&.-default {
+		+ .ui-accordion-item-content {
+			& > .inner {
+				padding-top: 20px;
+			}
+		}
+	}
+	.ui-list-item {
+		padding: 0;
+		min-height: auto;
+	}
+
+	.ui-checkbox-label {
+		color: var(--text5);
+	}
+
+	.ui-button.-only-icon {
+		margin-right: -8px;
+		color: var(--text9);
+	}
+}
+
+.ui-accordion-item-content {
+	padding: 0 var(--spacing-x);
+	max-height: 0;
+	background-color: white;
+	overflow-y: hidden;
+	transition: all 0.5s ease;
+	& > .inner {
+		padding: 40px 0;
+	}
+}

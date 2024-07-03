@@ -1,0 +1,19 @@
+.ui-icon {
+  display: flex;
+  flex-shrink: 0;
+  color: var(--texti);
+  &.inherit {
+    color: inherit !important;
+  }
+
+  g {
+    transform-origin: center;
+  }
+}
+
+p {
+  .ui-icon {
+    display: inline-flex;
+    vertical-align: top;
+  }
+}

@@ -1,0 +1,192 @@
+/*
+  display
+  visibility
+  padding
+  margin
+  width
+  border
+  border-radius
+  background
+  font-xxx
+ */
+
+// display
+.none { display: none; }
+.block { display: block; }
+.inline-block { display: inline-block; }
+.flex { display: flex; align-items: center; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-start { display: flex; align-items: flex-start; }
+.inline-flex { display: inline-flex; align-items: center; }
+.flex-column { display: flex; flex-direction: column; }
+.flex-between { display: flex; justify-content: space-between; }
+.flex1 { flex: 1; }
+.cursor { cursor: pointer; }
+.fit-content { width: fit-content; }
+
+// gap
+.gap0 { gap: 0 !important; }
+.gap2 { gap: 2px !important; }
+.gap4 { gap: 4px !important; }
+.gap6 { gap: 6px !important; }
+.gap8 { gap: 8px !important; }
+.gap10 { gap: 10px !important; }
+.gap16 { gap: 16px !important; }
+.gap24 { gap: 24px !important; }
+
+// visibility
+.hidden { visibility: hidden; }
+.visible { visibility: visible; }
+
+// padding
+.spacing-x { padding-left: var(--spacing-x); padding-right: var(--spacing-x); }
+.spacing-x-margin { margin-left: var(--spacing-x); margin-right: var(--spacing-x); }
+.p-8 { padding: 8px !important; }
+.p-16 { padding: 16px !important; }
+.p-32 { padding: 32px !important; }
+.p12-24 { padding: 12px 24px !important; }
+.p16-24 { padding: 16px 24px !important; }
+
+.pt4 { padding-top: 4px !important; }
+.pt8 { padding-top: 8px !important; }
+.pt10 { padding-top: 10px !important; }
+.pt12 { padding-top: 12px !important; }
+.pt16 { padding-top: 16px !important; }
+.pt20 { padding-top: 20px !important; }
+.pt24 { padding-top: 24px !important; }
+.pt32 { padding-top: 32px !important; }
+.pt40 { padding-top: 40px !important; }
+.pt48 { padding-top: 48px !important; }
+
+.pb4 { padding-bottom: 4px !important; }
+.pb8 { padding-bottom: 8px !important; }
+.pb12 { padding-bottom: 12px !important; }
+.pb16 { padding-bottom: 16px !important; }
+.pb24 { padding-bottom: 24px !important; }
+.pb32 { padding-bottom: 32px !important; }
+.pb40 { padding-bottom: 40px !important; }
+.pb48 { padding-bottom: 48px !important; }
+.pb56 { padding-bottom: 56px !important; }
+.pb80 { padding-bottom: 80px !important; }
+
+// margin
+.m0 { margin: 0 !important; }
+.m0-auto { margin: 0 auto !important; }
+.mt2 { margin-top: 2px !important; }
+.mt4 { margin-top: 4px !important; }
+.mt6 { margin-top: 6px !important; }
+.mt8 { margin-top: 8px !important; }
+.mt10 { margin-top: 10px !important; }
+.mt12 { margin-top: 12px !important; }
+.mt16 { margin-top: 16px !important; }
+.mt20 { margin-top: 20px !important; }
+.mt24 { margin-top: 24px !important; }
+.mt32 { margin-top: 32px !important; }
+.mt40 { margin-top: 40px !important; }
+.mt48 { margin-top: 48px !important; }
+.mt56 { margin-top: 56px !important; }
+.mt80 { margin-top: 80px !important; }
+
+.mr4 { margin-right: 4px !important; }
+.mr8 { margin-right: 8px !important; }
+.mr12 { margin-right: 12px !important; }
+.mr16 { margin-right: 16px !important; }
+
+.ml-auto { margin-left: auto !important; }
+.ml4 { margin-left: 4px !important; }
+.ml8 { margin-left: 8px !important; }
+.ml10 { margin-left: 10px !important; }
+.ml12 { margin-left: 12px !important; }
+.ml16 { margin-left: 16px !important; }
+
+.mb8 { margin-bottom: 8px !important; }
+.mb12 { margin-bottom: 12px !important; }
+.mb16 { margin-bottom: 16px !important; }
+.mb24 { margin-bottom: 24px !important; }
+.mb32 { margin-bottom: 32px !important; }
+.mb40 { margin-bottom: 40px !important; }
+.mb48 { margin-bottom: 48px !important; }
+.mb56 { margin-bottom: 56px !important; }
+.mb80 { margin-bottom: 80px !important; }
+
+// width
+.w-100 { width: 100% !important; }
+
+// border
+.border-t { border-top: 1px solid var(--border100); }
+.border-b { border-bottom: 1px solid var(--border100); }
+.border-100 { border: 1px solid var(--border100); }
+.border-200 { border: 1px solid var(--border200); }
+
+// border-radius
+.br-4 { border-radius: 4px; }
+.br-6 { border-radius: 6px; }
+.br-8 { border-radius: 8px; }
+.br-12 { border-radius: 12px; }
+.br-16 { border-radius: 16px; }
+
+// background
+.bg-texti { background-color: var(--texti) !important; }
+.bg-100 { background-color: var(--bg100) !important; }
+.bg-200 { background-color: var(--bg200) !important; }
+.bg-300 { background-color: var(--bg300) !important; }
+.bg-500 { background-color: var(--bg500) !important; }
+.bg-white { background-color: white !important; }
+.bg-secondary08 { background-color: var(--secondary08) !important; }
+.bg-success08 { background-color: var(--success08) !important; }
+.bg-error08 { background-color: var(--error08) !important; }
+
+// text-align
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.text-right { text-align: right !important; }
+
+// font size
+.fz-h1 { @include font-heading(1); }
+.fz-h2 { @include font-heading(2); }
+.fz-h3 { @include font-heading(3); }
+.fz-h4 { @include font-heading(4); }
+.fz-h5 { @include font-heading(5); }
+.fz-h6 { @include font-heading(6); }
+.fz-b1 { @include font-body(1); }
+.fz-b2 { @include font-body(2); }
+.fz-b3 { @include font-body(3); }
+.fz-c1 { @include font-caption(1); }
+.fz-c2 { @include font-caption(2); }
+.fz-c3 { @include font-caption(3); }
+
+// font weight
+.fw-700 { font-weight: 700 !important; }
+.fw-500 { font-weight: 500 !important; }
+.fw-300 { font-weight: 300 !important; }
+
+// font color
+.fc-text2 { color: var(--text2) !important; }
+.fc-text5 { color: var(--text5) !important; }
+.fc-text8 { color: var(--text8) !important; }
+.fc-text9 { color: var(--text9) !important; }
+.fc-texti { color: var(--texti) !important; }
+.fc-primary { color: var(--primary) !important; }
+.fc-primary-sub { color: var(--primary-sub) !important; }
+.fc-secondary { color: var(--secondary) !important; }
+.fc-success { color: var(--success) !important; }
+.fc-error { color: var(--error) !important; }
+.fc-danger { color: var(--danger) !important; }
+
+.break-all { word-break: break-all; }
+.keep-all { word-break: keep-all; }
+.nowrap { white-space: nowrap; }
+.pre-wrap { white-space: pre-wrap; }
+
+.ellipsis1 { @include ellipsis(1); }
+.ellipsis2 { @include ellipsis(2); }
+.ellipsis3 { @include ellipsis(3); }
+
+// common text style
+.txt-time{
+  display: inline-flex;
+  @include gap(4px);
+  align-items: center;
+  @include font-caption(1, 500);
+  color: var(--text9);
+}

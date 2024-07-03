@@ -1,0 +1,108 @@
+.ui-label-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  &.-gap{
+    @include gap(8px);
+  }
+  &.-nowrap {
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  &.-inherit {
+    .ui-label.-text {
+      &::before {
+        background-color: currentColor;
+      }
+    }
+  }
+}
+
+.ui-label {
+  flex-shrink: 0;
+  width: fit-content;
+  &:not(.-text) {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 6px;
+    @include font-caption(1, 700);
+    &.-small {
+      padding: 4px 6px;
+      @include font-caption(3, 700);
+    }
+    &.-medium{
+      padding: 4px 8px;
+      @include font-caption(1, 700);
+    }
+    &.-primary {
+      background-color: var(--primary08);
+      color: var(--primary);
+    }
+    &.-secondary {
+      background-color: var(--secondary08);
+      color: var(--secondary);
+    }
+    &.-success {
+      background-color: var(--success08);
+      color: var(--success);
+    }
+    &.-danger {
+      background-color: var(--danger08);
+      color: var(--danger);
+    }
+    &.-tertiary {
+      background-color: var(--bg100);
+      color: var(--text9);
+    }
+  }
+
+  &.-text {
+    @include font-caption(1);
+    color: var(--text5);
+    &.-medium{
+      @include font-caption(1);
+    }
+    &.-large{
+      @include font-body(2);
+    }
+    &.-primary {
+      color: var(--primary);
+    }
+    &.-primary-sub {
+      color: var(--primary-sub);
+    }
+    &.-blue,
+    &.-success {
+      color: var(--secondary);
+    }
+    &.-gray,
+    &.-hold {
+      color: var(--text9);
+    }
+    &.-gray2 {
+      color: var(--text8);
+    }
+    &.-gray3 {
+      color: var(--text5);
+    }
+    &.-red,
+    &.-danger,
+    &.-error {
+      color: var(--error);
+    }
+
+    &:not(:first-child){
+      display: inline-flex;
+      align-items: center;
+      &::before {
+        content: '';
+        display: block;
+        margin: auto 6px;
+        width: 1px;
+        height: 8px;
+        background-color: var(--border200);
+      }
+    }
+  }
+}
