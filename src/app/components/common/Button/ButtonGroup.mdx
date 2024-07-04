@@ -1,0 +1,67 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Button } from './Button'
+import { ButtonGroup } from './ButtonGroup'
+import { SelectButton } from './SelectButton'
+import { PrimaryButton } from './PrimaryButton'
+import { SecondaryButton } from './SecondaryButton'
+
+<Meta title="Components/Button/ButtonGroup" />
+
+# ButtonGroup
+<br />
+
+## Default
+<Canvas>
+  <ButtonGroup>
+    <SecondaryButton>버튼</SecondaryButton>
+    <PrimaryButton>버튼</PrimaryButton>
+  </ButtonGroup>
+</Canvas>
+
+## isColumn
+<Canvas>
+  <ButtonGroup isColumn>
+    <SecondaryButton>버튼</SecondaryButton>
+    <PrimaryButton>버튼</PrimaryButton>
+  </ButtonGroup>
+</Canvas>
+
+## isFitted
+<Canvas>
+  <ButtonGroup isFitted>
+    <SecondaryButton>버튼</SecondaryButton>
+    <PrimaryButton>버튼</PrimaryButton>
+  </ButtonGroup>
+</Canvas>
+
+## with Text
+### - btn later
+<Canvas>
+  <ButtonGroup isColumn>
+    <PrimaryButton>동의하기</PrimaryButton>
+    <Button isLater>나중에</Button>
+  </ButtonGroup>
+</Canvas>
+### - plain text
+<Canvas>
+  <ButtonGroup isColumn>
+    <p className="ui-button-text"><em>16,973명</em>이 기다리고 있어요</p>
+    <PrimaryButton>동의하기</PrimaryButton>
+  </ButtonGroup>
+</Canvas>
+
+## with btnSelect
+<Canvas>
+  <ButtonGroup isColumn>
+    <SelectButton title="선택형" />
+    <SelectButton title="선택형" desc="설명글이 있을 때 타이틀은 볼드가 됩니다." />
+  </ButtonGroup>
+</Canvas>
+
+## Ratio
+<Canvas>
+  <ButtonGroup isSelect>
+    <SecondaryButton ratio={3}>버튼</SecondaryButton>
+    <PrimaryButton ratio={7}>버튼</PrimaryButton>
+  </ButtonGroup>
+</Canvas>
