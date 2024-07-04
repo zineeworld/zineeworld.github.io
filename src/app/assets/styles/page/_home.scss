@@ -1,8 +1,14 @@
 .ui-home {
   display: grid;
   min-height: 100vh;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: auto;
   background-color: #000;
+  
+  @media screen and (min-width: 720px) {
+    grid-template-rows: auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   a {
     display: flex;
