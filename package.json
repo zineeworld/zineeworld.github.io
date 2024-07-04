@@ -10,10 +10,19 @@
     "deploy": "next build && next export && gh-pages -d out"
   },
   "dependencies": {
+    "@mdx-js/loader": "^3.0.1",
+    "@mdx-js/react": "^3.0.1",
+    "@next/mdx": "^14.2.4",
+    "@types/mdx": "^2.0.13",
     "classnames": "^2.5.1",
+    "gray-matter": "^4.0.3",
+    "highlight.js": "^11.9.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",
+    "rehype-highlight": "^7.0.0",
+    "remark": "^15.0.1",
+    "remark-html": "^16.0.1",
     "sass": "^1.77.6"
   },
   "devDependencies": {

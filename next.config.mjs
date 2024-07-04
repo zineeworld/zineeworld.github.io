@@ -1,10 +1,12 @@
 /** @type {import('next').NextConfig} */
 
+import withMDX from '@next/mdx';
+import rehypeHighlight from 'rehype-highlight';
 import path from 'path';
 
 const __dirname = path.dirname(new URL(import.meta.url).pathname);
 
-const nextConfig = {
+const nextConfig = withMDX({
   output: 'export',
   images: {
     unoptimized: true,
@@ -14,6 +16,12 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-};
+  extension: /\.mdx?$/,
+  options: {
+    rehypePlugins: [rehypeHighlight]
+  }
+})({
+  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
+});
 
 export default nextConfig;
