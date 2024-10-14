@@ -1,14 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Smooch&display=swap');
+
 .ui-home {
   display: grid;
   min-height: 100vh;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: auto;
   background-color: #000;
-  
-  @media screen and (min-width: 720px) {
+
+  @media (min-aspect-ratio: 1.2/1) {
     grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .box {
+    --page-gap: 40px;
+    position: relative;
+    overflow: hidden;
+
+    .logo {
+      position: absolute;
+      top: var(--page-gap);
+      left: var(--page-gap);
+      font-family: "Courgette", cursive;
+      font-size: 40px;
+      font-weight: 700;
+      color: white;
+      z-index: 1;
+    }
+
+    .resume {
+      position: absolute;
+      bottom: var(--page-gap);
+      left: var(--page-gap);
+      display: flex;
+      flex-direction: column;
+      color: white;
+
+      .category {
+        font-size: 20px;
+        line-height: 1.5;
+      }
+      .title {
+        margin-bottom: 16px;
+        font-size: 52px;
+        font-weight: 800;
+        line-height: 1.25;
+      }
+      .desc {
+        margin-bottom: 12px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .date {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+.pf-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 
   a {
     display: flex;
@@ -19,28 +71,6 @@
     height: 100%;
     font-size: 2vw;
   }
-
-  .box {
-    overflow: hidden;
-    
-    a {
-      background-color: #222;
-      color: #fff;
-      opacity: 1;
-      transition: all 0.15s linear;
-    }
-
-    &:hover {
-      a {
-        opacity: 0.8;
-      }
-    }
-  }
-}
-
-.pf-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
   li {
     a {
