@@ -4,23 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/myblog/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/404.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/Gemfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/_config.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/_posts/2024-06-14-welcome-to-jekyll.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/about.markdown" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myblog/index.markdown" afterDir="false" />
+    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="add fonts">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_variables.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/assets/styles/base/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/base/_fonts.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/assets/styles/base/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/base/_reset.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/assets/styles/page/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/page/_home.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,23 +45,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\오혜진\\IdeaProjects\\zineeworld.github.io\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "develop",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/오혜진/IdeaProjects/zineeworld.github.io/public/fonts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2023.3\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\오혜진\IdeaProjects\zineeworld.github.io\public\fonts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\오혜진\IdeaProjects\zineeworld.github.io" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -104,6 +113,15 @@
       <workItem from="1725509694586" duration="4323000" />
       <workItem from="1725517588945" duration="110000" />
     </task>
+    <task id="LOCAL-00001" summary="add fonts">
+      <option name="closed" value="true" />
+      <created>1729673637522</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1729673637522</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,5 +140,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="add fonts" />
+    <option name="LAST_COMMIT_MESSAGE" value="add fonts" />
   </component>
 </project>

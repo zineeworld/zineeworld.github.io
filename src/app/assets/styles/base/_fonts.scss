@@ -1,39 +1,48 @@
+$fontUrl: '/fonts/';
+
 @font-face {
-  font-family: 'GmarketSans';
+  font-family: 'SUIT';
   font-weight: 300;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.eot?#iefix') format('embedded-opentype'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff2') format('woff2'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.woff') format('woff'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansLight.ttf') format("truetype");
+  src: url('#{$fontUrl}SUIT-Light.eot');
+  src: url('#{$fontUrl}SUIT-Light.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontUrl}SUIT-Light.woff2') format('woff2'),
+  url('#{$fontUrl}SUIT-Light.woff') format('woff'),
+  url('#{$fontUrl}SUIT-Light.ttf') format("truetype");
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'GmarketSans';
+  font-family: 'SUIT';
+  font-weight: 400;
+  font-style: normal;
+  src:
+      url('#{$fontUrl}SUIT-Regular.woff2') format('woff2'),
+      url('#{$fontUrl}SUIT-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+
+
+@font-face {
+  font-family: 'SUIT';
   font-weight: 500;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.eot?#iefix') format('embedded-opentype'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff2') format('woff2'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.woff') format('woff'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansMedium.ttf') format("truetype");
+  src: url('#{$fontUrl}SUIT-Medium.eot');
+  src: url('#{$fontUrl}SUIT-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontUrl}SUIT-Medium.woff2') format('woff2'),
+  url('#{$fontUrl}SUIT-Medium.woff') format('woff'),
+  url('#{$fontUrl}SUIT-Medium.ttf') format("truetype");
   font-display: swap;
 }
+
 @font-face {
-  font-family: 'GmarketSans';
+  font-family: 'SUIT';
   font-weight: 700;
   font-style: normal;
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot');
-  src: url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.eot?#iefix') format('embedded-opentype'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff2') format('woff2'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.woff') format('woff'),
-  url('https://cdn.jsdelivr.net/gh/webfontworld/gmarket/GmarketSansBold.ttf') format("truetype");
+  src: url('#{$fontUrl}SUIT-Bold.eot');
+  src: url('#{$fontUrl}SUIT-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontUrl}SUIT-Bold.woff2') format('woff2'),
+  url('#{$fontUrl}SUIT-Bold.woff') format('woff'),
+  url('#{$fontUrl}SUIT-Bold.ttf') format("truetype");
   font-display: swap;
 }
-
-// SUIT
-@import url('https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css');
-
-// Pretendard
-@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
