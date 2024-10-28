@@ -62,3 +62,12 @@ pre, code {
   font-weight: normal;
   letter-spacing: normal;
 }
+
+.cursorImage {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  pointer-events: none; /* 마우스 이벤트 차단 */
+  display: none; /* 마우스 움직임이 없을 때 숨김 */
+  transition: transform 0.1s ease;
+}

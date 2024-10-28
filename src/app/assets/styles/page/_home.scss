@@ -5,35 +5,55 @@
   min-height: 100vh;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: auto;
-  background-color: #000;
+
+  .left,
+  .right {
+    position: relative;
+  }
+
+  &:nth-of-type(2n-1) {
+    background-color: #111;
+    color: white;
+    .right::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: linear-gradient(180deg,rgba(255,255,255,.02) 0,rgba(255,255,255,.06) 100%);
+    }
+  }
+  &:nth-of-type(2n) {
+    background-color: #fff;
+    color: #111;
+    .left {
+      background-image: linear-gradient(180deg,rgba(0,0,0,.02) 0,rgba(0,0,0,.06) 100%);
+    }
+  }
 
   @media (min-aspect-ratio: 1.2/1) {
     grid-template-rows: auto;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .box {
+  .intro.left {
     --page-gap: 40px;
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--page-gap);
     overflow: hidden;
 
     .logo {
-      position: absolute;
-      top: var(--page-gap);
-      left: var(--page-gap);
-      font-size: 40px;
-      font-weight: 700;
-      color: white;
+      font-size: 30px;
+      font-weight: 300;
       z-index: 1;
     }
 
     .resume {
-      position: absolute;
-      bottom: var(--page-gap);
-      left: var(--page-gap);
       display: flex;
       flex-direction: column;
-      color: white;
 
       .category {
         font-size: 20px;
@@ -52,8 +72,16 @@
       }
       .date {
         font-size: 16px;
+        font-weight: 300;
       }
     }
+  }
+  
+  .intro.right {
+    //background-image: url('/images/img_bridge_bw.webp');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -112,4 +140,11 @@
       }
     }
   }
+}
+
+.ui-footer {
+  padding: 40px 16px 20px;
+  background-color: #222;
+  font-size: 12px;
+  color: white;
 }
