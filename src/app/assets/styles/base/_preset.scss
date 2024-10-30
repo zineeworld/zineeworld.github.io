@@ -72,6 +72,7 @@
 // margin
 .m0 { margin: 0 !important; }
 .m0-auto { margin: 0 auto !important; }
+.mt-auto { margin-top: auto !important; }
 .mt2 { margin-top: 2px !important; }
 .mt4 { margin-top: 4px !important; }
 .mt6 { margin-top: 6px !important; }
@@ -141,24 +142,19 @@
 .text-center { text-align: center !important; }
 .text-right { text-align: right !important; }
 
-// font size
-.fz-h1 { @include font-heading(1); }
-.fz-h2 { @include font-heading(2); }
-.fz-h3 { @include font-heading(3); }
-.fz-h4 { @include font-heading(4); }
-.fz-h5 { @include font-heading(5); }
-.fz-h6 { @include font-heading(6); }
-.fz-b1 { @include font-body(1); }
-.fz-b2 { @include font-body(2); }
-.fz-b3 { @include font-body(3); }
-.fz-c1 { @include font-caption(1); }
-.fz-c2 { @include font-caption(2); }
-.fz-c3 { @include font-caption(3); }
-
 // font weight
+.fw-900 { font-weight: 900 !important; }
+.fw-800 { font-weight: 800 !important; }
 .fw-700 { font-weight: 700 !important; }
+.fw-600 { font-weight: 600 !important; }
 .fw-500 { font-weight: 500 !important; }
+.fw-400 { font-weight: 400 !important; }
 .fw-300 { font-weight: 300 !important; }
+.fw-200 { font-weight: 200 !important; }
+.fw-100 { font-weight: 100 !important; }
+
+// font style
+.fs-italic { font-style: italic; }
 
 // font color
 .fc-text2 { color: var(--text2) !important; }
@@ -182,11 +178,3 @@
 .ellipsis2 { @include ellipsis(2); }
 .ellipsis3 { @include ellipsis(3); }
 
-// common text style
-.txt-time{
-  display: inline-flex;
-  @include gap(4px);
-  align-items: center;
-  @include font-caption(1, 500);
-  color: var(--text9);
-}

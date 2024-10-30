@@ -14,8 +14,8 @@
 }
 
 @mixin safe-bottom($paddingBottom: var(--spacing-b)) {
-  padding-bottom: max($paddingBottom, constant(safe-area-inset-bottom)); 
-  padding-bottom: max($paddingBottom, env(safe-area-inset-bottom)); 
+  padding-bottom: max($paddingBottom, constant(safe-area-inset-bottom));
+  padding-bottom: max($paddingBottom, env(safe-area-inset-bottom));
 }
 
 @mixin sticky-bottom-area($paddingTop: 16px) {
@@ -87,4 +87,16 @@
       }
     }
   }
+}
+
+@mixin m-style {
+  @media screen and (max-width: 900px) {
+    @content;
+  };
+}
+
+@mixin pc-style {
+  @media screen and (min-width: 901px) {
+    @content;
+  };
 }

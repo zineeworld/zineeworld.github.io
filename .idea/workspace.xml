@@ -4,15 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="update fonts">
-      <change afterPath="$PROJECT_DIR$/public/cursor-image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/app/components/common/Cursor/Cursor.tsx" afterDir="false" />
+    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="fix: main">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/base/_reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/base/_reset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Bold.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Light.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.eot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.woff" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Medium.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Regular.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/suit/SUIT-Regular.woff2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_mixin_utils.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_mixin_utils.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/abstracts/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/base/_fonts.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/base/_fonts.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/base/_preset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/base/_preset.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/assets/styles/page/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/page/_home.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/assets/styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/assets/styles/styles.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/Layout/LayoutBase.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/common/Layout/LayoutBase.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
     </list>
@@ -70,7 +90,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "develop",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/오혜진/IdeaProjects/zineeworld.github.io/public/images",
+    "last_opened_file_path": "C:/Users/오혜진/IdeaProjects/zineeworld.github.io",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -134,7 +154,7 @@
       <workItem from="1725517588945" duration="110000" />
       <workItem from="1729750870249" duration="785000" />
       <workItem from="1729839733463" duration="3043000" />
-      <workItem from="1730081369965" duration="5260000" />
+      <workItem from="1730081369965" duration="24015000" />
     </task>
     <task id="LOCAL-00001" summary="add fonts">
       <option name="closed" value="true" />
@@ -152,7 +172,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729673688424</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix: main">
+      <option name="closed" value="true" />
+      <created>1730094392276</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1730094392276</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,6 +201,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="add fonts" />
     <MESSAGE value="update fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="update fonts" />
+    <MESSAGE value="fix: main" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: main" />
   </component>
 </project>
