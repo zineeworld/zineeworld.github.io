@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="fix: main">
+    <list default="true" id="16e6bc19-d2b7-4f19-9c50-0a36deb6704f" name="Changes" comment="fix: Cursor.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/common/Cursor/Cursor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/components/common/Cursor/Cursor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730276797650</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fix: Cursor.tsx">
+      <option name="closed" value="true" />
+      <created>1730357487336</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730357487336</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -184,6 +192,7 @@
     <MESSAGE value="add fonts" />
     <MESSAGE value="update fonts" />
     <MESSAGE value="fix: main" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: main" />
+    <MESSAGE value="fix: Cursor.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: Cursor.tsx" />
   </component>
 </project>
