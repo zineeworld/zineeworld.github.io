@@ -14,8 +14,8 @@ export const Cursor = () => {
   useEffect(() => {
     const handleMouseMove = (e: any) => {
       setCursorStyle({
-        left: `${e.pageX}px`,
-        top: `${e.pageY}px`,
+        left: e.pageX, // 숫자로만 설정
+        top: e.pageY,
         display: 'block',
       });
     };
@@ -36,7 +36,11 @@ export const Cursor = () => {
   }, []);
 
   return (
-    <div className="cursorImage" style={cursorStyle}>
+    <div className="cursorImage" style={{
+      ...cursorStyle,
+      left: `${cursorStyle.left}px`,
+      top: `${cursorStyle.top}px`,
+    }}>
       <img src="/cursor-image.png" alt="Cursor" width="40" height="40"/>
     </div>
   )
