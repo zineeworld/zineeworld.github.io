@@ -63,32 +63,42 @@ export default function Home() {
           <div className="careers-area">
             <ul className="careers-list">
               <li className="is-active">
-                <h2 className="company">핀크</h2>
-                <p className="company-desc">하나금융그룹이 만든 핀테크 전문 기업</p>
-                <p className="period">2023.08 ~ Present <span>서비스개발1팀</span></p>
-                <div className="detail">
+                <Link href="/portfolio/finnq">
+                  <h2 className="company">핀크</h2>
+                  <p className="company-desc">하나금융그룹이 만든 핀테크 전문 기업</p>
+                  <p className="period">2023.08 ~ Present <span>서비스개발1팀</span></p>
+                  <div className="detail">
 
-                </div>
+                  </div>
+                </Link>
               </li>
               <li>
-                <h2 className="company">카카오엔터프라이즈</h2>
-                <p className="company-desc">업무용 메신저 카카오워크</p>
-                <p className="period">2020.02 ~ 2023.08 <span>디자인모듈파트 파트장</span></p>
+                <Link href="/portfolio/kakaoenterprise">
+                  <h2 className="company">카카오엔터프라이즈</h2>
+                  <p className="company-desc">업무용 메신저 카카오워크</p>
+                  <p className="period">2020.02 ~ 2023.08 <span>디자인모듈파트 파트장</span></p>
+                </Link>
               </li>
               <li>
-                <h2 className="company">코인원</h2>
-                <p className="company-desc">암호화폐 거래소</p>
-                <p className="period">2018.02 ~ 2020.02 <span>유저플로우 셀장</span></p>
+                <Link href="/portfolio/coinone">
+                  <h2 className="company">코인원</h2>
+                  <p className="company-desc">암호화폐 거래소</p>
+                  <p className="period">2018.02 ~ 2020.02 <span>유저플로우 셀장</span></p>
+                </Link>
               </li>
               <li>
-                <h2 className="company">마이뮤직테이스트</h2>
-                <p className="company-desc">데이터 기반 수요 예측 공연 기획/제작</p>
-                <p className="period">2015.06 ~ 2018.01 <span>UI/UX 팀</span></p>
+                <Link href="/portfolio/mymusictaste">
+                  <h2 className="company">마이뮤직테이스트</h2>
+                  <p className="company-desc">데이터 기반 수요 예측 공연 기획/제작</p>
+                  <p className="period">2015.06 ~ 2018.01 <span>UI/UX 팀</span></p>
+                </Link>
               </li>
               <li>
-                <h2 className="company">JC 플래닛</h2>
-                <p className="company-desc">해외 게임 퍼블리싱</p>
-                <p className="period">2014.02 ~ 2015.06 <span>개발팀</span></p>
+                <Link href="/portfolio/jcplanet">
+                  <h2 className="company">JC 플래닛</h2>
+                  <p className="company-desc">해외 게임 퍼블리싱</p>
+                  <p className="period">2014.02 ~ 2015.06 <span>개발팀</span></p>
+                </Link>
               </li>
             </ul>
           </div>
@@ -147,7 +157,7 @@ export default function Home() {
       
       <footer className="ui-footer">
         &copy; zineeworld 2014-2025<br/>
-        이 사이트는 크롬에 최적화 되어있습니다
+        이 사이트는 Next.js + Markdown + Vercel 로 제작되었습니다.<br/>
       </footer>
     </div>
   );

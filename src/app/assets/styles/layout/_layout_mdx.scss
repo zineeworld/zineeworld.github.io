@@ -1,5 +1,24 @@
+.ui-container {
+  background-color: #f7f7f7;
+
+  .ui-content {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 720px;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+  }
+}
+
 .ui-mdx {
   color: var(--text2);
+
+  h1 {
+    font-weight: 900;
+  }
 
   h1, h2, h3, h4 {
     &:not(:first-of-type) {
@@ -43,5 +62,20 @@
 
   li {
     line-height: 1.7;
+    a {
+      color: #ff7979;
+    }
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  code {
+    padding: 2px 4px;
+    border-radius: 4px;
+    background-color: #fddcdc;
+    color: #ff7979;
   }
 }
