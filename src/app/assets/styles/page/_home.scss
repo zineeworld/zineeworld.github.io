@@ -55,15 +55,17 @@
     &:nth-of-type(2n-1) {
       background-color: #111;
       color: white;
+
       .right {
-        background-image: linear-gradient(180deg,rgba(255,255,255,.01) 0,rgba(255,255,255,.04) 100%);
+        background-image: linear-gradient(180deg, rgba(255, 255, 255, .01) 0, rgba(255, 255, 255, .04) 100%);
       }
     }
     &:nth-of-type(2n) {
       background-color: #fff;
       color: #111;
+
       .left {
-        background-image: linear-gradient(180deg,rgba(0,0,0,.01) 0,rgba(0,0,0,.04) 100%);
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, .01) 0, rgba(0, 0, 0, .04) 100%);
       }
     }
   }
@@ -78,6 +80,7 @@
       font-weight: 100;
       line-height: 1.5;
     }
+
     .title {
       margin-left: -0.05em;
       font-size: max(4.5vw, 40px);
@@ -85,14 +88,17 @@
       line-height: 1.2;
       letter-spacing: -2px;
       text-transform: uppercase;
+
       &.tight {
         letter-spacing: -3px;
       }
     }
+
     .desc {
       font-size: max(2vw, 16px);
       font-weight: 500;
     }
+
     .etc {
       font-size: max(1.5vw, 14px);
       font-weight: 100;
@@ -111,6 +117,7 @@
   .common-list {
     display: grid;
     gap: 1em;
+
     li {
       display: flex;
       align-items: center;
@@ -119,6 +126,9 @@
       @include m-style {
         flex-direction: column;
         align-items: flex-start;
+        padding: 0.8em 0.8em;
+        border-left: 0.2em solid currentColor;
+        background-color: #f7f7f7;
       }
       @include pc-style {
         &:hover {
@@ -126,6 +136,7 @@
         }
       }
     }
+
     span {
       flex-shrink: 0;
       margin-right: 1em;
@@ -137,6 +148,7 @@
         margin-bottom: 0.5em;
       }
     }
+
     .label {
       display: inline-block;
       width: max(6vw, 60px);
@@ -176,6 +188,7 @@
       font-weight: 100;
       line-height: 1.5;
       opacity: 0.5;
+      word-break: break-all;
 
       .title {
         font-size: max(4.5vw, 56px);
@@ -194,16 +207,19 @@
         height: max(3.5vw, 20px);
         letter-spacing: -1px;
         overflow: hidden;
+
         span {
           display: block;
           line-height: 1;
           overflow: hidden;
           transition: transform 0.25s;
         }
+
         &:hover {
           span[lang="en"] {
             transform: translateY(-100%);
           }
+
           span[lang="ko"] {
             transform: translateY(-100%);
           }
@@ -229,7 +245,7 @@
       display: block;
       width: min(1vw, 1px);
       height: calc(100% + 6vw);
-      background-image: linear-gradient(to bottom, rgba(11,11,11,0), #111 10%, #111);
+      background-image: linear-gradient(to bottom, rgba(11, 11, 11, 0), #111 10%, #111);
       //background-color: red;
       @include m-style {
         display: none;
@@ -252,6 +268,7 @@
 
       li {
         position: relative;
+
         &::before {
           content: '';
           position: absolute;
@@ -268,36 +285,56 @@
             display: none;
           }
         }
+
         &.-active {
           &::before {
             animation: bg 2s infinite;
           }
         }
+
         &:hover {
           .company {
             border-bottom-color: var(--yellow);
           }
+        }
+
+        @include m-style {
+          padding: 0.8em 0.8em;
+          border-left: 0.2em solid currentColor;
+          background-color: #f7f7f7;
         }
       }
 
       .company {
         display: inline-block;
         border-bottom-style: solid;
-        border-bottom-color: rgba(0,0,0,0);
+        border-bottom-color: rgba(0, 0, 0, 0);
         border-bottom-width: 0.2em;
+        line-height: 1;
         font-size: max(2vw, 20px);
-        font-weight: 900;
+        font-weight: 800;
       }
-      .period {
+
+      .company-desc {
         margin-top: 0.2em;
+        line-height: 1;
+        font-size: max(1.2vw, 14px);
+        font-weight: 500;
+      }
+
+      .period {
+        margin-top: 0.4em;
+        line-height: 1;
         font-size: max(1.2vw, 14px);
         font-weight: 300;
+
         span {
           margin-left: 0.5em;
           font-size: max(1vw, 12px);
           font-weight: 500;
         }
       }
+
       .detail {
         @include m-style {
           display: none;
@@ -315,6 +352,9 @@
       margin-top: auto;
       @include m-style {
         margin-top: 3em;
+        li {
+          background-color: #fff;
+        }
       }
     }
   }

@@ -13,13 +13,11 @@ export default function Home() {
           </div>
           
           <Link href="/resume" className="txt-intro">
-            <p>
-              안녕하세요, 저는 시니어 마크업 개발자 오혜진입니다.
-              웹의 기반이 되는 마크업 작업에 열정을 가지고 있으며 효율적인 HTML/CSS를 구현합니다.
-              최근에는 주로 디자인시스템 개발을 도맡아 진행했습니다.
-              Vue, React 등 프론트엔드 프레임워크에서 컴포넌트 단위의 마크업을 통해 프론트엔드 개발자와의 협업을 강화하는 데 집중합니다.
-              개발자 및 디자이너와의 원활한 소통을 최우선으로 생각하며, 글로 정리하여 기록하는 것을 좋아합니다.
-            </p>
+            안녕하세요, 저는 11년차 마크업 개발자 오혜진입니다.
+            웹의 기반이 되는 마크업 작업에 열정을 가지고 있으며 효율적인 HTML/CSS를 구현합니다.
+            최근 3년간은 핀크, 카카오엔터프라이즈에서 디자인시스템 개발을 도맡아 진행했습니다.
+            Vue, React 등 프론트엔드 프레임워크에서 컴포넌트 단위의 마크업을 통해 프론트엔드 개발자와의 협업을 강화하는 데 집중합니다.
+            개발자 및 디자이너와의 원활한 소통을 최우선으로 생각하며, 글로 정리하여 기록하는 것을 좋아합니다.
           </Link>
         </div>
 
@@ -66,25 +64,30 @@ export default function Home() {
             <ul className="careers-list">
               <li className="is-active">
                 <h2 className="company">핀크</h2>
+                <p className="company-desc">하나금융그룹이 만든 핀테크 전문 기업</p>
                 <p className="period">2023.08 ~ Present <span>서비스개발1팀</span></p>
                 <div className="detail">
-                  
+
                 </div>
               </li>
               <li>
                 <h2 className="company">카카오엔터프라이즈</h2>
+                <p className="company-desc">업무용 메신저 카카오워크</p>
                 <p className="period">2020.02 ~ 2023.08 <span>디자인모듈파트 파트장</span></p>
               </li>
               <li>
                 <h2 className="company">코인원</h2>
+                <p className="company-desc">암호화폐 거래소</p>
                 <p className="period">2018.02 ~ 2020.02 <span>유저플로우 셀장</span></p>
               </li>
               <li>
                 <h2 className="company">마이뮤직테이스트</h2>
+                <p className="company-desc">데이터 기반 수요 예측 공연 기획/제작</p>
                 <p className="period">2015.06 ~ 2018.01 <span>UI/UX 팀</span></p>
               </li>
               <li>
                 <h2 className="company">JC 플래닛</h2>
+                <p className="company-desc">해외 게임 퍼블리싱</p>
                 <p className="period">2014.02 ~ 2015.06 <span>개발팀</span></p>
               </li>
             </ul>
