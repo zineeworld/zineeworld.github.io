@@ -1,4 +1,5 @@
 .ui-container {
+  min-height: 100vh;
   background-color: #f7f7f7;
   padding-bottom: 80px;
 
@@ -9,7 +10,6 @@
     margin: 0 auto;
     max-width: 720px;
     width: 100%;
-    min-height: 100vh;
     background-color: #fff;
   }
 }
@@ -52,6 +52,10 @@
     }
   }
 
+  iframe {
+    margin-top: 1rem;
+  }
+
   ul, ol {
     margin-top: 0.5rem;
     list-style-position: inside;
@@ -86,7 +90,7 @@
     margin: 1rem 0;
     width: 100%;
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid #ddd;
     & + * {
       margin-top: 0;
     }
@@ -95,6 +99,9 @@
   img {
     display: block;
     max-width: 100%;
+    & + img {
+      margin-top: 1rem;
+    }
   }
 
   code {
@@ -104,11 +111,14 @@
     color: #ff7979;
   }
 
-  pre code {
-    display: block;
-    padding: 12px;
-    background-color: #e7e7e7;
-    line-height: 1.5;
-    color: inherit;
+  pre {
+    code {
+      display: block;
+      padding: 12px;
+      background-color: #e7e7e7;
+      line-height: 1.5;
+      color: inherit;
+      overflow: auto;
+    }
   }
 }
