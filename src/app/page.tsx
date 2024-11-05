@@ -63,7 +63,7 @@ export default function Home() {
           <div className="careers-area">
             <ul className="careers-list">
               <li className="is-active">
-                <Link href="/portfolio/finnq">
+                <Link href="/experience/finnq">
                   <h2 className="company">핀크</h2>
                   <p className="company-desc">하나금융그룹이 만든 핀테크 전문 기업</p>
                   <p className="period">2023.08 ~ Present <span>서비스개발1팀</span></p>
@@ -73,28 +73,28 @@ export default function Home() {
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio/kakaoenterprise">
+                <Link href="/experience/kakaoenterprise">
                   <h2 className="company">카카오엔터프라이즈</h2>
-                  <p className="company-desc">업무용 메신저 카카오워크</p>
+                  <p className="company-desc">AI 기반 플랫폼/솔루션 개발 전문 기업</p>
                   <p className="period">2020.02 ~ 2023.08 <span>디자인모듈파트 파트장</span></p>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio/coinone">
+                <Link href="/experience/coinone">
                   <h2 className="company">코인원</h2>
                   <p className="company-desc">암호화폐 거래소</p>
                   <p className="period">2018.02 ~ 2020.02 <span>유저플로우 셀장</span></p>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio/mymusictaste">
+                <Link href="/experience/mymusictaste">
                   <h2 className="company">마이뮤직테이스트</h2>
                   <p className="company-desc">데이터 기반 수요 예측 공연 기획/제작</p>
                   <p className="period">2015.06 ~ 2018.01 <span>UI/UX 팀</span></p>
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio/jcplanet">
+                <Link href="/experience/jcplanet">
                   <h2 className="company">JC 플래닛</h2>
                   <p className="company-desc">해외 게임 퍼블리싱</p>
                   <p className="period">2014.02 ~ 2015.06 <span>개발팀</span></p>
@@ -130,7 +130,7 @@ export default function Home() {
       <section className="ui-home etc" id="etc">
         <div className="left">
           <div className="txt-area">
-            <h1 className="title tight">ETC.</h1>
+            <h1 className="title tight">Ability</h1>
             <p className="desc">학력 및 자격증<br/>사용 가능한 기술과 툴</p>
           </div>
         </div>

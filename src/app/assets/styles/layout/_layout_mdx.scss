@@ -1,5 +1,6 @@
 .ui-container {
   background-color: #f7f7f7;
+  padding-bottom: 80px;
 
   .ui-content {
     display: flex;
@@ -16,27 +17,68 @@
 .ui-mdx {
   color: var(--text2);
 
+  .ui-label + h1 {
+    margin-top: 0.5rem;
+  }
+
   h1 {
-    font-weight: 900;
+    font-size: 2rem;
+    line-height: 1.5;
+    font-weight: 800;
+    letter-spacing: -1.5px;
   }
 
-  h1, h2, h3, h4 {
-    &:not(:first-of-type) {
-      margin-top: 1rem;
-    }
+  h2 {
+    margin-top: 4rem;
   }
 
-  h2 + h3 {
+  h3 {
+    margin-top: 1rem;
+  }
+
+  h4 {
     margin-top: 1rem;
   }
 
   p {
     margin: 1rem 0;
     line-height: 1.5;
+    word-break: break-all;
+    text-align: justify;
     + p,
     + ul, 
     + ol {
       margin-top: -0.5rem;
+    }
+  }
+
+  ul, ol {
+    margin-top: 0.5rem;
+    list-style-position: inside;
+    ul, ol {
+      margin-top: 0;
+      margin-left: 1rem;
+    }
+    + h3 {
+      margin-top: 4rem;
+    }
+  }
+
+  ol li {
+    list-style-type: decimal;
+  }
+
+  li {
+    list-style-type: square;
+    margin-left: 1.2rem;
+    line-height: 1.7;
+    ul {
+      li {
+        list-style-type: circle;
+      }
+    }
+    a {
+      color: #ff7979;
     }
   }
 
@@ -45,25 +87,8 @@
     width: 100%;
     border: none;
     border-top: 1px solid #ccc;
-  }
-
-  ul, li {
-    list-style: square;
-    list-style-position: inside;
-    ul {
+    & + * {
       margin-top: 0;
-      margin-left: 1rem;
-    }
-  }
-
-  ul, ol {
-    margin-top: 1rem;
-  }
-
-  li {
-    line-height: 1.7;
-    a {
-      color: #ff7979;
     }
   }
 
@@ -77,5 +102,13 @@
     border-radius: 4px;
     background-color: #fddcdc;
     color: #ff7979;
+  }
+
+  pre code {
+    display: block;
+    padding: 12px;
+    background-color: #e7e7e7;
+    line-height: 1.5;
+    color: inherit;
   }
 }

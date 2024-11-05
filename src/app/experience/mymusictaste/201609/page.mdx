@@ -1,0 +1,116 @@
+import { LayoutBase } from "@components/common/Layout/LayoutBase";
+
+<LayoutBase type="mdx" date="2016.09">
+  # Email Edit Tool 기획/디자인/개발
+
+  ## 개요
+  - **목적**
+    - 이메일 담당자가 직접 작성 가능하고, 이메일 템플릿 마크업 오류를 최소화하기 위함
+  - **상세 기능**
+    - 미리보기 - 타이핑 후 자동, 언어별, 반응형
+    - 코드 보기 - 이메일 템플릿 마크업 등록 (POST)/수정 (PUT)
+    - 테스트 이메일 발송 - 단일/다중 발송, 언어별 발송
+
+  ## 가이드 문서
+  ---
+  <iframe src="/files/mmt_email_template_guide.pdf" width="100%" height="400px"></iframe>
+  <a href="/files/mmt_email_template_guide.pdf" target="_blank">PDF 새 창으로 열기</a>
+
+
+  ## 기능 구현 사항
+  ---
+  - 드롭다운 클릭 -> 선택된 텍스트로 변경 (9/20)
+  - 코드
+    - `\t` 적용 (9/20)
+    - `\n` 적용 (9/21)
+    - `{% %}` 정규식으로 제거 (9/21)
+    - `keyup` 마다 자동 미리보기 (9/21)
+    - 템플릿 `get body` (9/21)
+    - 템플릿 `get base` (10/15)
+    - 템플릿 `put` (10/15)
+    - `btnSave` 버튼 Disabled/Enabled 이벤트 (10/15)
+    - `btnRevert` 버튼 Disabled/Enabled 이벤트 (10/17)
+    - 복잡한 `{% email_extra, include, extends, if %}` 등 처리 방안 고민
+    - 템플릿 생성 (AJAX POST)
+  - 미리보기 -다국어 테스트 (10/25)
+  - 테스트 - 이메일 보내기 (10/25)
+
+
+  ## API
+  ---
+  - `/tool/email/list`
+  - `/tool/email/list?base`
+  - `/tool/email/list?language`
+  - `/tool/email/{base_name}?base`
+  - `/tool/email/{body_name}`
+  - `/tool/email/{body_name}?language={id}`
+
+  ## 개발 로그
+  ---
+  ### 9/19 월
+  - API language dropdown
+  - API template dropdown
+  - Textarea
+    - `html()` 함수로 자동으로 `\n`, `\t` 적용
+    - `tab` keydown 이벤트 적용 (단, API의 '\t'는 6 스페이스로 폭이 정확하지 않음)
+
+  ### 9/20 화
+  - 드롭다운 목록 클릭 후 선택된 텍스트 버튼에 적용
+  - 정규식을 활용한 `{% %}` 제거
+    - `{% block email_extra %} {% endblock %}`에 대한 고민
+  - Textarea
+    - `keydown` 이벤트 (tab, enter)
+    - `keyup` 이벤트 (타이핑)
+
+  ### 9/21 수
+  - 정규식을 활용한 `{% %}` 제거
+  - Textarea
+    - enter(`\n`) 적용
+    - 입력하는 내용이 실시간으로 미리보기 영역에 반영되도록 함
+  - 툴 레이아웃 변경
+
+  **이슈**
+  - `PUT` 요청 시 문제 발생
+    - `400 Bad Request` -> 실장님 이슈
+    - `csrftoken` 관련 문제 ([Flask CSRF Token Documentation](http://flask-wtf.readthedocs.io/en/latest/csrf.html#ajax))
+
+  ### 10/15 토
+  - 실장님이 문제를 해결해 AJAX `PUT` 성공
+  - 템플릿 base/body 구분해서 `GET` 성공
+  - `Save` 버튼 기능 구현 및 `disabled(true/false)` 추가
+
+  ### 10/17 월
+  - `btnRevert` 버튼 기능 구현 및 `disabled(true/false)` 추가
+  - `Textarea`는 `html()`이 아닌 `val()`로 변경
+
+  ### 10/22 토
+  - `<% email_extra %>` 처리(있을 때와 없을 때 구분)
+  - 이메일 테스트
+    - 단일 발송
+    - `input` 추가/삭제
+    - 템플릿 선택 전까지 `btnSend`는 `disabled`
+
+  ### 10/24 월
+  - 이메일 테스트
+    - 리스트(다중 발송, Hotmail/Yahoo 메일 수신 불가)
+    - input이 1개 이하일 때 [-] 버튼 비활성화 (required를 추가한 것은 삭제 불가)
+    - 언어 dropdown (base 템플릿이 아닐 때만 활성화)
+    - 빈 input을 제외한 값만 리스트에 추가
+
+  ### 10/25 화
+  - `body_html`에 `email_extra`가 있는지 여부를 확인하여 치환
+
+  ### 10/26 수
+  **이슈**
+  - `keyup` 및 `put` 이벤트를 모두 `body/base(base/ticketsqr/others)`로 구분하여 처리 필요
+  - `base` 템플릿 `PUT` 시 `400 Bad Request`
+  - `base` 템플릿 이메일 발송 불가 `{"error":"Invalid Email"}`
+  - ticketsqr 선택 후 다른 템플릿 선택 시 `base + body_html`이 로드되어야 함 (현재 구현되지 않음)
+
+  ### 10/29 토
+  - `keyup` 및 `put` 이벤트를 모두 `body/base`로만 구분하여 처리
+  - `base` 템플릿 `PUT` 시 `400 Bad Request` 해결 (실장님 지원)
+  - `base` 템플릿 이메일 발송 불가 `{"error":"Invalid Email"}`
+  - `ticketsqr` 선택 후 다른 템플릿 선택 시 `base + body_html`이 로드되지 않음
+  - `base` 템플릿을 선택 시 통으로 치환하도록, 백엔드에서 `extend` 부분을 처리하여 넘겨주길 기대
+</LayoutBase>
