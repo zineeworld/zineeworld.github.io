@@ -115,14 +115,41 @@ export default function Home() {
 
         <div className="right">
           <ul className="common-list">
-            <li><span>2023.05</span>제로베이스 FE스쿨 - 1일 특강 &lt;스타트업에서 대기업까지&gt;</li>
-            <li><span>2021.09</span>제로베이스 FE스쿨 - HTML/CSS 파트 온라인 강의</li>
-            <li><span>2021.03</span>패스트캠퍼스 - 마크업파트 온라인 강의</li>
-            <li><span>2020.06</span>이화여자대학교 컴퓨터공학부 여성리더십 특강 (후기)</li>
-            <li><span>2019.10</span>W3C Conference 2019 (후기)</li>
-            <li><span>2019.04</span>Women TechMakers 2019 (후기)</li>
-            <li><span>2019.03</span>프로그라피 4기 프론트엔드 멘토 (후기)</li>
-            <li><span>2018.04</span>스타트업 얼라이언스 &lt;좋아서 일하는 사람들&gt; (후기) (기사)</li>
+            <li>
+              <span className="num">2023.05</span>
+              <span>제로베이스 FE스쿨 - 1일 특강 &lt;스타트업에서 대기업까지&gt;</span>
+            </li>
+            <li>
+              <span className="num">2021.09</span>
+              <span>제로베이스 FE스쿨 - HTML/CSS 파트 온라인 강의</span>
+            </li>
+            <li>
+              <span className="num">2021.03</span>
+              <span>패스트캠퍼스 - 마크업파트 온라인 강의</span>
+            </li>
+            <li>
+              <span className="num">2020.06</span>
+              <a href="/activities/202006"><span>이화여자대학교 컴퓨터공학부 여성리더십 특강 (후기)</span></a>
+            </li>
+            <li>
+              <span className="num">2019.10</span>
+              <a href="/activities/201910"><span>W3C Conference 2019 (후기)</span></a>
+            </li>
+            <li>
+              <span className="num">2019.04</span>
+              <a href="/activities/201904"><span>Women TechMakers 2019 (후기)</span></a>
+            </li>
+            <li>
+              <span className="num">2019.03</span>
+              <a href="/activities/201903"><span>프로그라피 4기 프론트엔드 멘토 (후기)</span></a>
+            </li>
+            <li>
+              <span className="num">2018.04</span>
+              <span>
+                <a href="/activities/201804">스타트업 얼라이언스 &lt;좋아서 일하는 사람들&gt; (후기)</a>&nbsp;
+                <a href="https://brunch.co.kr/@startupalliance/11" target="_blank">(기사)</a>
+              </span>
+            </li>
           </ul>
         </div>
       </section>
@@ -138,10 +165,10 @@ export default function Home() {
         <div className="right">
           <h2 className="sub-title">Education &amp; Certifications</h2>
           <ul className="common-list">
-            <li><span>2013.12</span>직업능력개발훈련교사(멀티미디어3급) / 노동부</li>
-            <li><span>2013.10</span>웹표준/웹접근성 역량강화 프로그램 전문가 과정 수료</li>
-            <li><span>2013.08</span>정보처리기사 / 한국산업인력공단</li>
-            <li><span>2013.08</span>한국기술교육대학교 컴퓨터공학과 학사</li>
+            <li><span className="num">2013.12</span>직업능력개발훈련교사(멀티미디어3급) / 노동부</li>
+            <li><span className="num">2013.10</span>웹표준/웹접근성 역량강화 프로그램 전문가 과정 수료</li>
+            <li><span className="num">2013.08</span>정보처리기사 / 한국산업인력공단</li>
+            <li><span className="num">2013.08</span>한국기술교육대학교 컴퓨터공학과 학사</li>
           </ul>
 
           <h2 className="sub-title">Skills &amp; Tools</h2>

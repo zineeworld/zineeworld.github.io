@@ -2,6 +2,9 @@
   min-height: 100vh;
   background-color: #f7f7f7;
   padding-bottom: 80px;
+  @include m-style {
+    background-color: #fff;
+  }
 
   .ui-content {
     display: flex;
@@ -11,6 +14,9 @@
     max-width: 720px;
     width: 100%;
     background-color: #fff;
+    @include m-style {
+      padding: 20px 20px;
+    }
   }
 }
 
@@ -86,6 +92,7 @@
     }
     a {
       color: #ff7979;
+      cursor: pointer;
     }
   }
 
@@ -102,26 +109,41 @@
   img {
     display: block;
     max-width: 100%;
-    & + img {
-      margin-top: 1rem;
-    }
+    margin-top: 1rem;
   }
 
-  code {
+  pre + h3,
+  iframe + h3 {
+    margin-top: 5rem;
+  }
+
+  code:not([class*='language']) {
     padding: 2px 4px;
     border-radius: 4px;
     background-color: #fddcdc;
     color: #ff7979;
+    vertical-align: text-top;
+    word-break: break-all;
   }
 
-  pre {
-    code {
-      display: block;
-      padding: 12px;
-      background-color: #e7e7e7;
-      line-height: 1.5;
-      color: inherit;
-      overflow: auto;
-    }
+  code[class*='language'] {
+    padding: 0;
+  }
+
+  /* 코드 블록 스타일링 */
+  pre, code {
+    font-family: 'Consolas', monospace;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-height: 1.7;
+  }
+
+  .hljs-comment, .hljs-quote {
+    font-style: normal;
+  }
+
+  video {
+    margin-top: 1rem;
   }
 }

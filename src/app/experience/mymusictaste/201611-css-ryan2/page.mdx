@@ -1,6 +1,109 @@
-import { LayoutBase } from "@components/common/Layout/LayoutBase";
+import { LayoutBase } from "@components/Layout/LayoutBase";
+import { CodeBlock } from "@components/CodeBlock/CodeBlock";
 
 <LayoutBase type="mdx" date="2016.11">
   # [초급 튜토리얼] CSS로 라이언 그리기(2) - HTML
 
+  ## 대상 분석
+  ---
+  이  과정은 CSS로 작업하는 것 만큼이나 중요합니다. 포토샵을 사용하면 안내선으로 그리드를 칠 수 있습니다. 그러면 각 요소의 크기나 위치를 좀 더 정확히 알 수 있습니다. 단순한 캐릭터 일수록 비율이나 위치가 조금만 달라도 닮은 듯 안 닮은 결과물이 나오게 됩니다. 꼭 필요한 과정은 아니지만 이렇게 세밀하게 수치를 재서 만들면 완성도가 올라갑니다. 포토샵이 없다면 color picker를 이용해서 요소의 색상을 파악하면 됩니다.
+
+  ![ryan](/images/exprience/mmt/ryan11.png)
+
+
+
+
+  ## HTML 구조 잡고 적절한 클래스명 생각하기
+  ---
+  그리려는 대상을 보고 HTML을 어떻게 구성할 지 파악해야 합니다. 구조를 잡았다면 적절한 클래스명을 넣습니다. 누가 보더라도 어떤 부분을 맡고 있는 요소인지 명확하게 알 수 있도록 적는 것이 좋습니다. 꼭 캐릭터 드로잉 뿐만 아니라 웹 퍼블리싱을 할 때에도 디자인 산출물을 보고 어떻게 HTML 구조를 짤 지 생각하는 과정은 중요합니다.
+
+  ![ryan](/images/exprience/mmt/ryan12.png)
+
+
+  <iframe height="500" scrolling="no" title="[CSS Drawing] Basic Tutorial - 06. mouth" src="https://codepen.io/zineeworld/embed/MbJMoV?default-tab=html%2Cresult" frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/MbJMoV">
+    [CSS Drawing] Basic Tutorial - 06. mouth</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ## HTML 구조 특이사항
+  ---
+  HTML에는 많은 요소(element)가 있습니다. 우리는 최소한의 요소(div)만 사용하여 구조를 잡을 것입니다.
+
+  라이언을 구성하는 div 배치에서 중요한 것은 div.ear는 div.face 밖에 있다는 것입니다.
+
+  <CodeBlock language="css">{`
+  <div class="ryan">
+    <!-- ear -->
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+
+    <!-- face -->
+    <div class="face"></div>
+  </div>
+  `}
+  </CodeBlock>
+
+
+
+
+  ## 다중 클래스
+  ---
+  클래스를 두 가지 이상 사용할 경우에는 중간에 공백을 넣어 줍니다. 이렇게 되면 .ear을 통해서 귀의 공통 스타일을 적어줄 수 있고, .left 와 .right 를 통해 양쪽의 위치만 다르게 적어 줄 수 있습니다. 다음 튜토리얼에서 자세하게 설명하겠지만 귀를 예로 들면 아래와 같습니다.
+
+  <CodeBlock language="html">{`
+  <!-- 한 가지 요소에 여러개의 클래스를 넣을 수 있습니다. -->
+  <div class="ryan">
+    <div class="ear left"></div>
+    <div class="ear right"></div>
+  </div>
+  `}
+  </CodeBlock>
+
+
+
+  ## CSS 선택자
+
+  선택자의 대표 유형으로는 태그를 직접 선택( div )하거나, 클래스( . )명으로 선택하거나,  아이디( # )로 접근 방법이 있습니다.
+  아이디는 잘 쓰지 않으니 주로 클래스를 사용하도록 합니다.
+  선택자와 선택자 사이에 공백(&nbsp;)은 하위 요소는 선택하는 것을 의미합니다.
+  곧 `.rya .ear`은 `<div class="ryan">` 안에 있는 `<div class="ear">`를 선택하겠다는 것 입니다.
+  다중 클래스를 사용한 경우에는 공백없이 바로 붙여(`.ryan .ear.left`) 적습니다. 이 점 유의하세요!
+
+  <CodeBlock language="css">{`
+    /* 귀 공통 스타일 */
+    .ryan .ear {
+      position: absolute;
+      top: 0;
+      width: 92px;
+      height: 92px;
+      border: 10px solid #000;
+      border-radius: 100%;
+      background: #d59729;
+    }
+
+    /* 왼쪽 귀 위치 */
+    .ryan .ear.left {
+      left: 54px;
+    }
+
+    /* 오른쪽 귀 위치 */
+    .ryan .ear.right {
+      right: 54px;
+    }
+  `}
+  </CodeBlock>
+
+  선택자에 대한 자세한 설명은 아래 링크를 참고 하시길 바랍니다.
+
+  - <a href="https://opentutorials.org/course/2418/13500" target="_blank">https://opentutorials.org/course/2418/13500</a>
+  - <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors</a>
+  - <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank">https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Getting_started/Selectors</a>
+
+
+
+  ## 다음은 CSS!
+  ---
+  진짜 핵심만 남았네요! 다음 튜토리얼에서 만나요 😉
 </LayoutBase>

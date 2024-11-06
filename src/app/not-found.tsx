@@ -1,4 +1,4 @@
-import { LayoutLoading } from "@components/common/Layout/LayoutLoading";
+import { LayoutLoading } from "@components/Layout/LayoutLoading";
 
 export default function NotFound() {
   return (

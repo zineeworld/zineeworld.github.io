@@ -1,6 +1,304 @@
-import { LayoutBase } from "@components/common/Layout/LayoutBase";
+import { LayoutBase } from "@components/Layout/LayoutBase";
+import { CodeBlock } from "@components/CodeBlock/CodeBlock";
 
 <LayoutBase type="mdx" date="2016.11">
   # [초급 튜토리얼] CSS로 라이언 그리기(3) - CSS
 
+  ## 주요 CSS 설명
+  가장 많이 사용되는 CSS들 입니다. 링크를 누르면 예제와 간략한 설명을 보실 수 있습니다.
+
+  - <a href="https://codepen.io/zineeworld/pen/LbOxMz" target="_blank">box-sizing: border-box</a>
+  - <a href="https://codepen.io/zineeworld/pen/eBeGJK" target="_blank">position: relative | absolute</a>
+  - margin: 0 auto (block 요소의 중앙 정렬)
+  - width (가로)
+  - height (세로)
+  - border: 7px solid #000 (7px 검정색 테두리)
+  - <a href="https://codepen.io/zineeworld/pen/qqVRLX" target="_blank">border-radius: 100% (사각형을 원형으로 만듦)</a>
+  - background (배경색)
+  - <a href="https://codepen.io/zineeworld/pen/aBEaXE" target="_blank">z-index (z축 3차원 우선순위)</a>
+
+
+
+  ## 진행방식
+  총 6단계+@로 이루어져 있습니다. 각 단계에서 새롭게 추가되는 부분을 설명하도록 하겠습니다.
+
+  첫 시작에는 각 줄마다 주석을 달아 설명하도록 하겠습니다. 밑으로 내려갈수록 중복 된 부분은 생략하겠습니다.
+
+  ### 1. 얼굴
+  ---
+  <CodeBlock language="css">{`
+    /* *은 전체 선택자 입니다. */
+    *, *:after, *:before {
+      /* padding이나 border-width로 인해 전체 사이즈에 영향을 받지 않도록 선언해 줍니다. */
+      box-sizing: border-box;
+    }
+
+    /* 라이언과 잘 어울리는 색상을 배경으로 넣었습니다. */
+    body {
+      background: #313654;
+    }
+
+    /* 전체 영역을 잡아주었습니다. */
+    .ryan {
+      position: relative; /* 라이언 기준점 잡기 */
+      margin: 50px auto; /* 상하 50px 여백을 주고 좌우는 중앙 정렬 */
+      width: 400px; /* 라이언 가로 폭 */
+      height: 380px; /* 라이언 세로 폭 */
+    }
+
+    /* 전체 영역에서 밑에 딱 붙은 얼굴(원)를 그립니다. */
+    .ryan .face {
+      position: absolute; /* .ryan에 position: relative를 주었으므로 그 영역을 기준으로 잡습니다. */
+      bottom: 0; /* 바닥에서 0px 떨어진 곳 = 맨 아래 위치 | 0은 굳이 단위(px)를 적지 않아도 됩니다. */
+      width: 400px;
+      height: 367px;
+      border-radius: 100%; /* 원형으로 만들기 */
+      border: 10px solid #000; /* 검정색 테두리 10px */
+      background: #d59729; /* 라이언 얼굴 색 */
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 01. face"
+          src="https://codepen.io/zineeworld/embed/YpNoWm?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/YpNoWm">
+    [CSS Drawing] Basic Tutorial - 01. face</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### 2. 귀
+  ---
+  <CodeBlock language="css">{`
+    .ryan .ear {
+      position: absolute;
+      top: 0;
+      width: 92px;
+      height: 92px;
+      border: 10px solid #000;
+      border-radius: 100%;
+      background: #d59729;
+    }
+
+    /* 다중 클래스를 이용할 때는 클래스 명 사이에 공백 없이 적어주는 것 잊지마세요! */
+    .ryan .ear.left {
+      left: 54px;
+    }
+
+    .ryan .ear.right {
+      right: 54px;
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 02. ear"
+          src="https://codepen.io/zineeworld/embed/LbxKyo?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/LbxKyo">
+    [CSS Drawing] Basic Tutorial - 02. ear</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### 3. 눈썹
+  ---
+  <CodeBlock language="css">{`
+    .ryan .eyebrow {
+      position: absolute;
+      top: 106px;
+      width: 78px;
+      height: 14px;
+      border-radius: 14px;
+      background: #000;
+      transition: all 0.2s; /* 속성이 변할 때 0.2초에 걸려 부드럽게 변하게 합니다. */
+    }
+
+    /* 다중 클래스를 이용할 때는 클래스 명 사이에 공백 없이 적어주는 것 잊지마세요! */
+    .ryan .eyebrow.left {
+      left: 68px;
+    }
+
+    .ryan .eyebrow.right {
+      right: 68px;
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 03. eyebrow"
+          src="https://codepen.io/zineeworld/embed/GNrbEo?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/GNrbEo">
+    [CSS Drawing] Basic Tutorial - 03. eyebrow</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### 4. 눈
+  ---
+  <CodeBlock language="css">{`
+    .ryan .eye {
+      position: absolute;
+      top: 147px;
+      width: 26px;
+      height: 26px;
+      border-radius: 100%;
+      background: #000;
+      transition: all 0.2s; /* 속성이 변할 때 0.2초에 걸려 부드럽게 변하게 합니다. */
+    }
+
+    /* 다중 클래스를 이용할 때는 클래스 명 사이에 공백 없이 적어주는 것 잊지마세요! */
+    .ryan .eye.left {
+      left: 98px;
+    }
+
+    .ryan .eye.right {
+      right: 98px;
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 04. eye"
+          src="https://codepen.io/zineeworld/embed/wogLeg?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/wogLeg">
+    [CSS Drawing] Basic Tutorial - 04. eye</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### 5. 코
+  ---
+  <CodeBlock language="css">{`
+    .ryan .nose {
+      position: absolute;
+      top: 184px;
+      left: 50%;
+      margin-left: -16px;
+      width: 32px;
+      height: 33px;
+      border-radius: 80% 80% 100% 100%; /* 그냥 100% 하셔도 됩니다. */
+      background: #000;
+      z-index: 2; /* z-index로 입보다 코가 위로 올라오도록 합니다. */
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 05. nose"
+          src="https://codepen.io/zineeworld/embed/KNajqy?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/KNajqy">
+    [CSS Drawing] Basic Tutorial - 05. nose</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### 6. 입
+  ---
+  <CodeBlock language="css">{`
+    .ryan .mouth {
+      position: absolute;
+      top: 191px;
+      right: 73px;
+      width: 73px;
+      height: 68px;
+      border: 10px solid #000;
+      border-radius: 50%;
+      background: #fff;
+    }
+
+    .ryan .mouth.left {
+      left: 127px;
+    }
+
+    .ryan .mouth.right {
+      right: 127px;
+    }
+
+    /* 이 아래 부분은 생략하셔도 괜찮습니다. */
+    /* :before, :after 가상요소를 활용하여 입 부분을 좀 더 완성도 있게 만들어 주었습니다. */
+    .ryan .mouth:before {
+      content: "";
+      position: absolute;
+      width: 30px;
+      height: 33px;
+      background: #fff;
+      -webkit-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      z-index: 1;
+    }
+
+    .ryan .mouth.left:before {
+      top: 2px;
+      left: 29px;
+    }
+
+    .ryan .mouth.right:before {
+      top: 2px;
+      right: 31px;
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 06. mouth"
+          src="https://codepen.io/zineeworld/embed/MbJMoV?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/MbJMoV">
+    [CSS Drawing] Basic Tutorial - 06. mouth</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+  ### +@
+  ---
+  그냥 똑같이만 그리는 건 심심하잖아요! 그래서 전 마우스오버 효과를 넣곤 합니다. 라이언이 윙크하게 만들어 볼까요?
+
+  <CodeBlock language="css">{`
+    /* .ryan에 hove(마우스오버) 했을 때 변화를 적어줍니다. */
+
+    /* 왼쪽 눈썹이 내려갑니다.(106px->100px) */
+    .ryan:hover .eyebrow.left {
+      top: 100px;
+    }
+
+    /* 오른쪽 눈썹이 -10deg 움직입니다. */
+    .ryan:hover .eyebrow.right {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+
+    /* 오른쪽 눈 크기가 가로는 2배 세로는 0.1배로 변합니다. */
+    .ryan:hover .eye.right {
+      -webkit-transform: scale(2, 0.1);
+      transform: scale(2, 0.1);
+    }
+  `}
+  </CodeBlock>
+
+  <iframe height="580" scrolling="no"
+          title="[CSS Drawing] Basic Tutorial - 07. transition"
+          src="https://codepen.io/zineeworld/embed/qqRzXG?default-tab=result"
+          frameBorder="no" loading="lazy" allowTransparency="true" allowFullScreen="true">
+    See the Pen <a href="https://codepen.io/zineeworld/pen/qqRzXG">
+    [CSS Drawing] Basic Tutorial - 07. transition</a> by zinee (<a href="https://codepen.io/zineeworld">@zineeworld</a>)
+    on <a href="https://codepen.io">CodePen</a>.
+  </iframe>
+
+
+
+  ## 완성!
+  ---
+  ![done](/images/exprience/mmt/ryan-done.gif)
+
+  <br/>
+
+  우와! 끝까지 따라오셨나요? 수고하셨습니다 :)
+
+  다른 캐릭터도 도전해보세요! 감사합니다!
 </LayoutBase>
