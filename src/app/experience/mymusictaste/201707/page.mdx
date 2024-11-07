@@ -1,4 +1,5 @@
 import { LayoutBase } from "@components/Layout/LayoutBase";
+import { CodeBlock } from "@components/CodeBlock/CodeBlock";
 
 <LayoutBase type="mdx" date="2017.07">
   # MMT Widget 기획/디자인/마크업
@@ -39,7 +40,7 @@ import { LayoutBase } from "@components/Layout/LayoutBase";
 
   ## 마크업 구조
   ---
-  ```
+  <CodeBlock language="html">{`
   div.mmt-widget-wrapper && (.left || .right) && (.dark || .light) && (null || .expand || .shrink)
     svg.mmt-widget-close
 
@@ -59,7 +60,7 @@ import { LayoutBase } from "@components/Layout/LayoutBase";
     div.mmt-widget-bar
       div.mmt-widget-bar-content
         div.artist-img
-  ```
+  `}</CodeBlock>
 
   ## 데모
   ---

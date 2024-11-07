@@ -61,6 +61,10 @@
     }
   }
 
+  small {
+    margin-top: 1rem;
+  }
+
   iframe {
     margin-top: 1rem;
   }
@@ -112,9 +116,18 @@
     margin-top: 1rem;
   }
 
+  p img {
+    margin-top: 0;
+  }
+
   pre + h3,
   iframe + h3 {
     margin-top: 5rem;
+  }
+
+  h3 + pre,
+  pre + pre {
+    margin-top: 1rem;
   }
 
   code:not([class*='language']) {
@@ -146,4 +159,8 @@
   video {
     margin-top: 1rem;
   }
+}
+
+.flex-center img {
+  flex: 1;
 }
