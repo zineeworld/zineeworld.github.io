@@ -59,6 +59,9 @@
     a {
       color: #ff7979;
     }
+    img:not(:only-child) {
+      margin-top: 1rem;
+    }
   }
 
   small {
@@ -116,10 +119,6 @@
     margin-top: 1rem;
   }
 
-  p img {
-    margin-top: 0;
-  }
-
   pre + h3,
   iframe + h3 {
     margin-top: 5rem;
@@ -163,4 +162,20 @@
 
 .flex-center img {
   flex: 1;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 0.5rem; /* 이미지 간의 간격을 설정 */
+  & + .image-container {
+    margin-top: 1rem;
+  }
+}
+
+.image-container img {
+  margin-top: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* 이미지가 잘리지 않고 잘 맞게 */
 }
