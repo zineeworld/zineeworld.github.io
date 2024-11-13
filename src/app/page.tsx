@@ -25,7 +25,7 @@ export default function Home() {
           <ul className="toc">
             <li>
               <a href="/#experience">
-                <span lang="en">Exprience</span>
+                <span lang="en">experience</span>
                 <span lang="ko">경력사항</span>
               </a>
             </li>
@@ -51,10 +51,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="ui-home exprience" id="experience">
+      <section className="ui-home experience" id="experience">
         <div className="left">
           <div className="txt-area">
-            <h1 className="title">Exprience</h1>
+            <h1 className="title">experience</h1>
             <p className="desc">경력사항</p>
           </div>
         </div>
