@@ -172,7 +172,20 @@ export default function Home() {
           </ul>
 
           <h2 className="sub-title">Skills &amp; Tools</h2>
-          <ul className="common-list skills">
+          <div className="skill-set">
+            <img src="/images/skills/ico_html.png" alt=""/>
+            <img src="/images/skills/ico_css.png" alt=""/>
+            <img src="/images/skills/ico_sass.png" alt=""/>
+            <img src="/images/skills/ico_js.png" alt=""/>
+            <img src="/images/skills/ico_ts.png" alt=""/>
+            <img src="/images/skills/ico_react.png" alt=""/>
+            <img src="/images/skills/ico_next.png" alt=""/>
+            <img src="/images/skills/ico_vue.png" alt=""/>
+            <img src="/images/skills/ico_storybook.png" alt=""/>
+            <img src="/images/skills/ico_vite.png" alt=""/>
+          </div>
+
+          <ul className="common-list skills mt20">
             <li>
               <span className="label">개발</span>
               <ul className="dev">

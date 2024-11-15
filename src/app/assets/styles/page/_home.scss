@@ -374,6 +374,21 @@
   }
 
   &.etc {
+    .skill-set {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      img {
+        display: block;
+        width: 80px;
+        border: 1px solid rgba(#000, 0.1);
+        border-radius: 16px;
+        @include m-style {
+          width: 64px;
+        }
+      }
+    }
+
     @include m-style {
       .right:has(.title) {
         margin-top: 56px;
