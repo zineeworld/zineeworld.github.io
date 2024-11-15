@@ -121,7 +121,7 @@ export default function Home() {
             </li>
             <li>
               <span className="num">2021.09</span>
-              <span>제로베이스 FE스쿨 - HTML/CSS 파트 온라인 강의</span>
+              <a href="/activities/202109"><span>제로베이스 FE스쿨 - HTML/CSS 파트 온라인 강의</span></a>
             </li>
             <li>
               <span className="num">2021.03</span>
@@ -172,13 +172,65 @@ export default function Home() {
           </ul>
 
           <h2 className="sub-title">Skills &amp; Tools</h2>
-          <ul className="common-list">
-            <li><span className="label">개발</span>HTML, CSS(Scss), Javascript, Typescript, React, Vue</li>
-            <li><span className="label">버전관리</span>GitHub, Gitlab, SourceTree</li>
-            <li><span className="label">IDE</span>IntelliJ, VSCode</li>
-            <li><span className="label">디자인</span>Figma</li>
-            <li><span className="label">협업</span>JIRA, Confluence, Notion, Google Workspace</li>
+          <ul className="common-list skills">
+            <li>
+              <span className="label">개발</span>
+              <ul className="dev">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Sass</li>
+                <li>Javascript</li>
+                <li>Typescript</li>
+                <li>React</li>
+                <li>Next.js</li>
+                <li>Vue</li>
+                <li>Storybook</li>
+              </ul>
+            </li>
+            <li>
+              <span className="label">버전관리</span>
+              <ul>
+                <li>GitHub</li>
+                <li>Gitlab</li>
+                <li>SourceTree</li>
+              </ul>
+            </li>
+            <li>
+              <span className="label">IDE</span>
+              <ul>
+                <li>IntelliJ</li>
+                <li>VSCode</li>
+              </ul>
+            </li>
+            <li>
+              <span className="label">디자인</span>
+              <ul>
+                <li>Figma</li>
+              </ul>
+            </li>
+            <li>
+              <span className="label">협업</span>
+              <ul>
+                <li>JIRA</li>
+                <li>Confluence</li>
+                <li>Notion</li>
+                <li>Google Workspace</li>
+                <li>Slack</li>
+              </ul>
+            </li>
           </ul>
+        </div>
+      </section>
+
+      <section className="ui-home contact" style={{display: 'none'}}>
+        <div className="left">
+          <div className="txt-area">
+            <h1 className="title tight">Contact</h1>
+            <p className="desc">연락주세요</p>
+          </div>
+        </div>
+        <div className="right">
+          zineeworld@gmail.com
         </div>
       </section>
       

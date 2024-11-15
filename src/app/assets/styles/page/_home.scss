@@ -44,7 +44,7 @@
   @include pc-style {
     display: grid;
     grid-template-rows: auto;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 3fr;
     @media screen and (max-width: 1080px) {
       min-height: min(100vh, 700px);
       @media screen and (max-height: 700px) {
@@ -130,9 +130,9 @@
       @include m-style {
         flex-direction: column;
         align-items: flex-start;
-        padding: 0.8em 0.8em;
-        border-left: 0.2em solid currentColor;
-        background-color: #f7f7f7;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text5);
       }
       @media (hover: hover) {
         a:hover {
@@ -142,27 +142,30 @@
     }
 
 
-    .num {
-      flex-shrink: 0;
+    .num,
+    .label {
       margin-right: 1em;
-      width: max(5.5vw, 60px);
-      font-family: "Space Mono", 'Gulim', monospace;
-      font-size: max(1.3vw, 14px);
-      font-weight: 700;
       line-height: 1;
+      font-size: max(1.3vw, 14px);
       @include m-style {
         margin-bottom: 0.5em;
+        font-size: 12px;
+        color: var(--text2);
       }
+    }
+
+    .num {
+      flex-shrink: 0;
+      width: max(5.5vw, 60px);
+      font-family: "Space Mono", 'Gulim', monospace;
+      font-weight: 700;
     }
 
     .label {
       display: inline-block;
-      margin-right: 1em;
       width: max(5.5vw, 60px);
       font-family: var(--font-family-sans);
-      font-size: max(1.3vw, 14px);
       font-weight: 800;
-      line-height: 1;
     }
   }
 
@@ -176,6 +179,7 @@
       overflow: hidden;
       @include m-style {
         padding-bottom: 40px;
+        height: 100vh;
       }
     }
 
@@ -312,9 +316,9 @@
         }
 
         @include m-style {
-          padding: 0.8em 0.8em;
+          padding: 0 0 0 0.8em;
           border-left: 0.2em solid currentColor;
-          background-color: #f7f7f7;
+          //background-color: #f7f7f7;
         }
       }
 
@@ -365,9 +369,6 @@
       margin-top: auto;
       @include m-style {
         margin-top: 3em;
-        li {
-          background-color: #fff;
-        }
       }
     }
   }
@@ -377,9 +378,44 @@
       .right:has(.title) {
         margin-top: 56px;
       }
+      .common-list.skills {
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.2em;
+          &.dev li {
+            background-color: var(--yellow);
+            color: var(--text2);
+          }
+
+          li {
+            padding: 0.2em 0.4em;
+            border: 1px solid currentColor;
+            border-radius: 1em;
+            background-color: var(--bg100);
+            font-size: 18px;
+          }
+        }
+      }
     }
     @include pc-style {
-      grid-template-columns: 1fr 1fr;
+      .common-list {
+        & > li {
+          width: 100%;
+        }
+        ul {
+          display: flex;
+          flex-wrap: wrap;
+          width: calc(100% - 60px);
+
+          li:not(:first-child) {
+            &::before {
+              content: ',';
+              margin-right: 2px;
+            }
+          }
+        }
+      }
     }
   }
 }
