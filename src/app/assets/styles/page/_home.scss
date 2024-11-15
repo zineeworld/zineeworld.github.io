@@ -382,18 +382,21 @@
         ul {
           display: flex;
           flex-wrap: wrap;
-          gap: 0.2em;
+          gap: 0.4em;
           &.dev li {
-            background-color: var(--yellow);
+            padding: 0.4em 0.8em;
+            border: 2px solid rgba(#222, 0.1);
+            border-radius: 1em;
+            background-color: var(--primary08);
+            font-size: 18px;
             color: var(--text2);
           }
 
           li {
-            padding: 0.2em 0.4em;
-            border: 1px solid currentColor;
+            padding: 0.4em 0.8em;
+            border: 2px solid rgba(#222, 0.1);
             border-radius: 1em;
             background-color: var(--bg100);
-            font-size: 18px;
           }
         }
       }
