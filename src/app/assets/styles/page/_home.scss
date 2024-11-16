@@ -130,6 +130,8 @@
       @include m-style {
         flex-direction: column;
         align-items: flex-start;
+        padding-bottom: 1em;
+        border-bottom: 1px solid var(--border100);
         font-size: 14px;
         font-weight: 500;
         color: var(--text5);
@@ -148,9 +150,13 @@
       line-height: 1;
       font-size: max(1.3vw, 14px);
       @include m-style {
-        margin-bottom: 0.5em;
+        margin-bottom: 0.3em;
+        padding: 0.2em;
         font-size: 12px;
-        color: var(--text2);
+        border-radius: 4px;
+        background-color: var(--text2);
+        color: #fff;
+        text-align: center;
       }
     }
 
@@ -198,7 +204,7 @@
       margin-top: auto;
       text-align: justify;
       font-size: max(0.9vw, 14px);
-      font-weight: 100;
+      font-weight: 300;
       line-height: 1.5;
       opacity: 0.5;
       word-break: break-all;
@@ -333,17 +339,19 @@
       }
 
       .company-desc {
-        margin-top: 0.2em;
-        line-height: 1;
-        font-size: max(1.2vw, 14px);
-        font-weight: 500;
-      }
-
-      .period {
         margin-top: 0.4em;
         line-height: 1;
         font-size: max(1.2vw, 14px);
+        font-weight: 500;
+        color: var(--text5);
+      }
+
+      .period {
+        margin-top: 0.6em;
+        line-height: 1;
+        font-size: max(1.2vw, 14px);
         font-weight: 300;
+        color: var(--text8);
 
         span {
           margin-left: 0.5em;

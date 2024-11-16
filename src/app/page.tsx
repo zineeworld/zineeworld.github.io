@@ -25,7 +25,7 @@ export default function Home() {
           <ul className="toc">
             <li>
               <a href="/#experience">
-                <span lang="en">experience</span>
+                <span lang="en">Experience</span>
                 <span lang="ko">경력사항</span>
               </a>
             </li>
@@ -173,19 +173,29 @@ export default function Home() {
 
           <h2 className="sub-title">Skills &amp; Tools</h2>
           <div className="skill-set">
-            <img src="/images/skills/ico_html.png" alt=""/>
-            <img src="/images/skills/ico_css.png" alt=""/>
-            <img src="/images/skills/ico_sass.png" alt=""/>
-            <img src="/images/skills/ico_js.png" alt=""/>
-            <img src="/images/skills/ico_ts.png" alt=""/>
-            <img src="/images/skills/ico_react.png" alt=""/>
-            <img src="/images/skills/ico_next.png" alt=""/>
-            <img src="/images/skills/ico_vue.png" alt=""/>
-            <img src="/images/skills/ico_storybook.png" alt=""/>
-            <img src="/images/skills/ico_vite.png" alt=""/>
+            <img src="/images/skills/ico_html.png" alt="HTML"/>
+            <img src="/images/skills/ico_css.png" alt="CSS"/>
+            <img src="/images/skills/ico_sass.png" alt="Sass"/>
+            <img src="/images/skills/ico_js.png" alt="Javascript"/>
+            <img src="/images/skills/ico_ts.png" alt="Typescript"/>
+            <img src="/images/skills/ico_react.png" alt="React"/>
+            <img src="/images/skills/ico_next.png" alt="Next.js"/>
+            <img src="/images/skills/ico_vue.png" alt="Vue.js"/>
+            <img src="/images/skills/ico_storybook.png" alt="Storybook"/>
+            <img src="/images/skills/ico_vite.png" alt="Vite"/>
+            <img src="/images/skills/ico_github.png" alt="Github"/>
+            <img src="/images/skills/ico_gitlab.png" alt="Gitlab"/>
+            <img src="/images/skills/ico_sourcetree.png" alt="SourceTree"/>
+            <img src="/images/skills/ico_intellij.png" alt="IntelliJ"/>
+            <img src="/images/skills/ico_vscode.png" alt="VSCode"/>
+            <img src="/images/skills/ico_figma.png" alt="Figma"/>
+            <img src="/images/skills/ico_jira.png" alt="Jira"/>
+            <img src="/images/skills/ico_confluence.png" alt="Confluence"/>
+            <img src="/images/skills/ico_notion.png" alt="Notion"/>
+            <img src="/images/skills/ico_slack.png" alt="Slack"/>
           </div>
 
-          <ul className="common-list skills mt20">
+          <ul className="common-list skills mt20 hidden">
             <li>
               <span className="label">개발</span>
               <ul className="dev">
